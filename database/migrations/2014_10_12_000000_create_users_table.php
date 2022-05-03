@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,14 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        $admin = new User;
+        $admin->name = config('admin.name');
+        $admin->email = config('admin.email');
+        $admin->is_admin = true;
+        $admin->password = bcrypt('password');
+        $admin->about_me = 'About Me';
+        $admin->save();
     }
 
     /**
