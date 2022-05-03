@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_section_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->text('description');
+            $table->integer('order');
+            $table->string('link_to_github');
+            $table->string('link_to_production');
             $table->timestamps();
         });
     }
