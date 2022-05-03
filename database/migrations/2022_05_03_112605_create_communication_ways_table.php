@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('communication_ways', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('value');
+            $table->string('icon_class');
             $table->timestamps();
         });
     }
