@@ -5,7 +5,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
 import Toggle from "@/Components/Flowbite/Toggle/Toggle";
 import Button from "@/Components/Flowbite/Button/Button";
-import SkillsFormInputs from "@/Partials/SkillsFormInputs";
+import FormInputs from "@/Partials/AdminPanel/Skills/FormInputs";
 
 const CreateSkill = (props) => {
     const { post, data, setData, errors, reset } = useForm({
@@ -42,7 +42,7 @@ const CreateSkill = (props) => {
 
             <div className="p-4">
                 <form onSubmit={handleSubmit}>
-                    <SkillsFormInputs
+                    <FormInputs
                         data={data}
                         handleChange={handleChange}
                         errors={errors}
