@@ -7,6 +7,10 @@ export default function Authenticated({ auth, header, children }) {
             name: "Dashboard",
             href: route("admin.dashboard"),
         },
+        {
+            name: "Skills",
+            href: route("admin.skills.index"),
+        },
     ];
 
     return (
