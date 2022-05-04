@@ -62,11 +62,13 @@ class ProjectSectionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\ProjectSection  $projectSection
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit(ProjectSection $projectSection)
     {
-        //
+        return Inertia::render('AdminPanel/ProjectSections/Edit', [
+            'projectSection' => $projectSection,
+        ]);
     }
 
     /**

@@ -4,6 +4,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
 import Button from "@/Components/Flowbite/Button/Button";
 import FloatingOutlinedInput from "@/Components/Flowbite/Input/FloatingOutlinedInput";
+import FormInputs from "@/Partials/AdminPanel/ProjectSection/FormInputs";
 
 const CreateProjectSection = (props) => {
     const { post, data, setData, errors, reset } = useForm({
@@ -38,18 +39,11 @@ const CreateProjectSection = (props) => {
 
             <div className="p-4">
                 <form onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        <div>
-                            <FloatingOutlinedInput
-                                name="name"
-                                value={data.name}
-                                onChange={handleChange}
-                                id="name"
-                                label="Project Section Name"
-                                error={errors.name}
-                            />
-                        </div>
-                    </div>
+                    <FormInputs
+                        handleChange={handleChange}
+                        data={data}
+                        errors={errors}
+                    />
                     <Button
                         label="Create Project Section"
                         type="submit"
