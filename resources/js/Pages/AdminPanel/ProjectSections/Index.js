@@ -10,6 +10,12 @@ import ProjectSectionCard from "@/Partials/AdminPanel/ProjectSection/ProjectSect
 
 const IndexProjectSections = (props) => {
     const handleDelete = ({ projectSection }) => {
+        if (projectSection.projects_count > 0) {
+            alert(
+                "You can not delete a project section that has projects inside it"
+            );
+            return;
+        }
         if (
             confirm(`Are you sure, you want to delete ${projectSection.name}?`)
         ) {
