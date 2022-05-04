@@ -63,11 +63,13 @@ class SkillController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Skill $skill
-     * @return Response
+     * @return \Inertia\Response
      */
-    public function edit(Skill $skill)
+    public function edit(Skill $skill): \Inertia\Response
     {
-        //
+        return Inertia::render('AdminPanel/Skills/Edit', [
+            'skill' => $skill,
+        ]);
     }
 
     /**
