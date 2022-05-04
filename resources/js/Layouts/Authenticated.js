@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import Dropdown from "@/Components/Dropdown";
-import NavLink from "@/Components/NavLink";
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Link } from "@inertiajs/inertia-react";
-import AdminNavbar from "@/Components/Flowbite/Navbar/AdminNavbar";
+import React from "react";
+import Navbar from "@/Components/Flowbite/Navbar/Navbar";
 
 export default function Authenticated({ auth, header, children }) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
+    const adminLinks = [
+        {
+            name: "Dashboard",
+            href: route("admin.dashboard"),
+        },
+    ];
 
     return (
         <div className="min-h-screen bg-gray-100">
-            <AdminNavbar />
+            <Navbar links={adminLinks} />
 
             {header && (
                 <header className="bg-white shadow">
