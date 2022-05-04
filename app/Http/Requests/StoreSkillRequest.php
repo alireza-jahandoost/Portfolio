@@ -11,9 +11,9 @@ class StoreSkillRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreSkillRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:50',
+            'icon_class' => 'required|string|max:50',
+            'is_fluent' => 'required|boolean',
         ];
     }
 }

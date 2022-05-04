@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Config\Repository;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * @property \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed $name
- * @property \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed $email
+ * @property Repository|Application|mixed $name
+ * @property Repository|Application|mixed $email
  * @property bool|mixed $is_admin
  * @property mixed|string $password
  * @property mixed|string $about_me
@@ -48,4 +50,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relationship between user and their skills
+     * @return HasMany
+     */
+    public function skills(): HasMany
+    {
+        return $this->hasMany(Skill::class);
+    }
 }
