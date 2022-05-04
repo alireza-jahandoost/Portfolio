@@ -1,9 +1,7 @@
 import React from "react";
-import FloatingOutlinedInput from "@/Components/Flowbite/Input/FloatingOutlinedInput";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
-import Toggle from "@/Components/Flowbite/Toggle/Toggle";
 import Button from "@/Components/Flowbite/Button/Button";
 import FormInputs from "@/Partials/AdminPanel/Skills/FormInputs";
 
