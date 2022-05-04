@@ -76,11 +76,15 @@ class ProjectSectionController extends Controller
      *
      * @param  \App\Http\Requests\UpdateProjectSectionRequest  $request
      * @param  \App\Models\ProjectSection  $projectSection
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateProjectSectionRequest $request, ProjectSection $projectSection)
     {
-        //
+        $data = $request->validated();
+
+        $projectSection->update($data);
+
+        return back();
     }
 
     /**
