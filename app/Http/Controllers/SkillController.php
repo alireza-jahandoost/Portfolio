@@ -77,11 +77,15 @@ class SkillController extends Controller
      *
      * @param UpdateSkillRequest $request
      * @param Skill $skill
-     * @return Response
+     * @return RedirectResponse
      */
     public function update(UpdateSkillRequest $request, Skill $skill)
     {
-        //
+        $data = $request->validated();
+
+        $skill->update($data);
+
+        return back();
     }
 
     /**
