@@ -12,4 +12,14 @@ class ProjectSection extends Model
     protected $fillable = [
         'name',
     ];
+
+    /**
+     * Relationship between project section and its projects
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function projects(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Project::class);
+    }
 }

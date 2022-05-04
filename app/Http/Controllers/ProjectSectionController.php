@@ -12,11 +12,14 @@ class ProjectSectionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        $projectSections = ProjectSection::where('user_id', auth()->id())->withCount('projects')->get();
+        return Inertia::render('AdminPanel/ProjectSections/Index', [
+            'projectSections' => $projectSections,
+        ]);
     }
 
     /**
