@@ -13,6 +13,11 @@ export default function Authenticated({ auth, header, children }) {
             href: route("admin.skills.index"),
             routeName: "admin.skills.index",
         },
+        {
+            name: "Project Sections",
+            href: route("admin.project_sections.index"),
+            routeName: "admin.project_sections.index",
+        },
     ];
 
     return (
