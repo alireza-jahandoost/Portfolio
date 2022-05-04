@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SkillController;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,6 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
         function () {
             Route::get('dashboard', [DashboardController::class, 'show'])->name('dashboard');
             Route::resource('skills', SkillController::class);
+            Route::resource('project_sections', ProjectSectionController::class);
         }
     );
