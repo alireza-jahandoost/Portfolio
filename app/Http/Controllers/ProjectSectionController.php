@@ -91,10 +91,14 @@ class ProjectSectionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\ProjectSection  $projectSection
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(ProjectSection $projectSection)
     {
-        //
+        if($projectSection->projects->count() === 0){
+            $projectSection->delete();
+        }
+
+        return back();
     }
 }
