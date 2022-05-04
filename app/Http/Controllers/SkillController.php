@@ -92,10 +92,12 @@ class SkillController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Skill $skill
-     * @return Response
+     * @return RedirectResponse
      */
     public function destroy(Skill $skill)
     {
-        //
+        $skill->delete();
+
+        return back();
     }
 }
