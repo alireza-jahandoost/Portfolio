@@ -59,4 +59,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Skill::class);
     }
+
+    /**
+     * Relationship between user and their project sections
+     *
+     * @return HasMany
+     */
+    public function projectSections(): HasMany
+    {
+        return $this->hasMany(ProjectSection::class);
+    }
 }

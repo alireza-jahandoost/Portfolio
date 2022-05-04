@@ -33,11 +33,15 @@ class ProjectSectionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreProjectSectionRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreProjectSectionRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        auth()->user()->projectSections()->create($data);
+
+        return back();
     }
 
     /**
