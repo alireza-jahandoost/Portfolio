@@ -14,11 +14,13 @@ class SkillController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return Inertia::render('AdminPanel/Skills/Index', [
+            'skills' => auth()->user()->skills,
+        ]);
     }
 
     /**
