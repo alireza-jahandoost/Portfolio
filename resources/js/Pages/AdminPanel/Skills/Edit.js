@@ -5,6 +5,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
 import Toggle from "@/Components/Flowbite/Toggle/Toggle";
 import Button from "@/Components/Flowbite/Button/Button";
+import SkillsFormInputs from "@/Partials/SkillsFormInputs";
 
 const EditSkill = (props) => {
     const { put, data, setData, errors, reset } = useForm({
@@ -37,50 +38,11 @@ const EditSkill = (props) => {
 
             <div className="p-4">
                 <form onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div>
-                            <FloatingOutlinedInput
-                                name="name"
-                                value={data.name}
-                                onChange={handleChange}
-                                id="name"
-                                label="Skill Name"
-                                error={errors.name}
-                            />
-                        </div>
-                        <div>
-                            <FloatingOutlinedInput
-                                name="icon_class"
-                                value={data.icon_class}
-                                onChange={handleChange}
-                                id="icon_class"
-                                label="Skill's icon class"
-                                error={errors.icon_class}
-                                helper={
-                                    <>
-                                        You can find you icon from{" "}
-                                        <a
-                                            href="https://fontawesome.com/search?s=solid%2Cbrands"
-                                            target="_blank"
-                                            className="text-blue-600 italic text-sm"
-                                        >
-                                            this
-                                        </a>{" "}
-                                        link
-                                    </>
-                                }
-                            />
-                        </div>
-                        <div>
-                            <Toggle
-                                onChange={handleChange}
-                                id="is_fluent"
-                                name="is_fluent"
-                                label="Fluent at"
-                                checked={data.is_fluent}
-                            />
-                        </div>
-                    </div>
+                    <SkillsFormInputs
+                        data={data}
+                        handleChange={handleChange}
+                        errors={errors}
+                    />
                     <Button
                         label="Update Skill"
                         type="submit"
