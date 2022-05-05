@@ -6,6 +6,7 @@ export default function changeHandler(event) {
             );
             return { key: event.target.name, value };
         case "INPUT":
+        case "TEXTAREA":
             let newValue;
             switch (event.target.type) {
                 case "checkbox":

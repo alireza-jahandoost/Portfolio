@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SkillController;
 use App\Http\Middleware\EnsureUserIsAdmin;
@@ -26,5 +27,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
             Route::get('dashboard', [DashboardController::class, 'show'])->name('dashboard');
             Route::resource('skills', SkillController::class);
             Route::resource('project_sections', ProjectSectionController::class);
+            Route::resource('landing_page', LandingPageController::class)
+                ->only(['edit', 'update']);
         }
     );

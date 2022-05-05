@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreLandingPageRequest;
 use App\Http\Requests\UpdateLandingPageRequest;
 use App\Models\LandingPage;
+use Inertia\Inertia;
 
 class LandingPageController extends Controller
 {
@@ -54,11 +55,13 @@ class LandingPageController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\LandingPage  $landingPage
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit(LandingPage $landingPage)
     {
-        //
+        return Inertia::render('AdminPanel/LandingPage/Edit', [
+            'landingPage' => $landingPage,
+        ]);
     }
 
     /**
