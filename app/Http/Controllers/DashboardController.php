@@ -12,7 +12,7 @@ use Inertia\Inertia;
 class DashboardController extends Controller
 {
     public function show(){
-        return Inertia::render('Dashboard',[
+        return Inertia::render('AdminPanel/Dashboard',[
             'landingPage' => LandingPage::first(),
             'workExperiences' => WorkExperience::all(),
             'communicationWays' => CommunicationWay::all(),
