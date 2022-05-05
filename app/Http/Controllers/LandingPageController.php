@@ -69,11 +69,17 @@ class LandingPageController extends Controller
      *
      * @param  \App\Http\Requests\UpdateLandingPageRequest  $request
      * @param  \App\Models\LandingPage  $landingPage
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateLandingPageRequest $request, LandingPage $landingPage)
     {
-        //
+        $data = $request->validated();
+
+        $landingPage->update($data);
+
+        $landingPage->save();
+
+        return back();
     }
 
     /**

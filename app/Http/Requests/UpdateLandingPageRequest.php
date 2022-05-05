@@ -13,7 +13,7 @@ class UpdateLandingPageRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class UpdateLandingPageRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|string|max:60',
+            'description' => 'required|string|max:500',
         ];
     }
 }

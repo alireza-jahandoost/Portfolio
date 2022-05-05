@@ -12,4 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 class LandingPage extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+    ];
 }
