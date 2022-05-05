@@ -16,9 +16,7 @@ const LandingPageSection = ({ landingPage }) => {
                 </div>
             </div>
             <div className="flex justify-end">
-                <EditLink
-                    href={route("admin.landing_page.edit", [landingPage.id])}
-                />
+                <EditLink href={route("admin.landing_page.edit")} />
             </div>
         </div>
     );

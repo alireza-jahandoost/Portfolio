@@ -57,10 +57,10 @@ class LandingPageController extends Controller
      * @param  \App\Models\LandingPage  $landingPage
      * @return \Inertia\Response
      */
-    public function edit(LandingPage $landingPage)
+    public function edit()
     {
         return Inertia::render('AdminPanel/LandingPage/Edit', [
-            'landingPage' => $landingPage,
+            'landingPage' => LandingPage::first(),
         ]);
     }
 
@@ -71,9 +71,11 @@ class LandingPageController extends Controller
      * @param  \App\Models\LandingPage  $landingPage
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateLandingPageRequest $request, LandingPage $landingPage)
+    public function update(UpdateLandingPageRequest $request)
     {
         $data = $request->validated();
+
+        $landingPage = LandingPage::first();
 
         $landingPage->update($data);
 
