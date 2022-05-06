@@ -22,6 +22,14 @@ const EditUserInformation = (props) => {
         setData(key, value);
     };
 
+    const handleImageDelete = () => {
+        if (confirm("Are you sure, you want to delete this image? ")) {
+            Inertia.delete(route("admin.user_profile.delete_image"), {
+                preserveScroll: true,
+            });
+        }
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         Inertia.post(
@@ -37,6 +45,7 @@ const EditUserInformation = (props) => {
                 onSuccess() {
                     setData("image", null);
                 },
+                preserveScroll: true,
             }
         );
     };
@@ -81,13 +90,21 @@ const EditUserInformation = (props) => {
                                 />
                             </div>
                         </div>
-                        <div className="my-4">
+                        <div className="my-4 flex justify-center">
                             {props.auth.user.image ? (
-                                <div>
+                                <div className="w-52 h-52 relative">
                                     <img
+                                        className="peer rounded-full h-full w-full"
                                         src={`/${props.auth.user.image}`}
                                         alt="User Image"
                                     />
+                                    <button
+                                        type="button"
+                                        onClick={handleImageDelete}
+                                        className="invisible peer-hover:visible hover:visible p-2 cursor-pointer text-white absolute left-0 right-0 ml-auto mr-auto w-20 top-0 bottom-0 mt-auto mb-auto h-20"
+                                    >
+                                        <i className="fa-solid fa-trash fa-2x" />
+                                    </button>
                                 </div>
                             ) : (
                                 <FileInput

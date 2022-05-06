@@ -37,5 +37,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('user_profile.edit');
             Route::put('user_profile', [UserController::class, 'update'])
                 ->name('user_profile.update');
+            Route::delete('user_profile_image', [UserController::class, 'delete_image'])
+                ->name('user_profile.delete_image');
         }
     );
