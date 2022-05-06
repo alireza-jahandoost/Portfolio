@@ -43,5 +43,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
 
             Route::get('communication_ways/edit', [CommunicationWayController::class, 'edit'])
                 ->name('communication_ways.edit');
+            Route::put('communication_ways', [CommunicationWayController::class, 'update'])
+                ->name('communication_ways.update');
         }
     );

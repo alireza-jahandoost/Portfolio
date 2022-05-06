@@ -69,11 +69,19 @@ class CommunicationWayController extends Controller
      *
      * @param  \App\Http\Requests\UpdateCommunicationWayRequest  $request
      * @param  \App\Models\CommunicationWay  $communicationWay
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateCommunicationWayRequest $request, CommunicationWay $communicationWay)
+    public function update(UpdateCommunicationWayRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        CommunicationWay::whereNotNull('id')->delete();
+
+        foreach($data['communication_ways'] as $communicationWay){
+            CommunicationWay::create($communicationWay);
+        }
+
+        return back();
     }
 
     /**

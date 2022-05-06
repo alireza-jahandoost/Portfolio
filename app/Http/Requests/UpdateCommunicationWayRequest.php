@@ -11,9 +11,9 @@ class UpdateCommunicationWayRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateCommunicationWayRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'communication_ways' => 'array',
+            'communication_ways.*.name' => 'string|max:80',
+            'communication_ways.*.value' => 'string|max:80',
+            'communication_ways.*.icon_class' => 'string|max:80',
         ];
     }
 }

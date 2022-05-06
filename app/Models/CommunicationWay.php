@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CommunicationWay extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'value',
+        'icon_class',
+    ];
 }
