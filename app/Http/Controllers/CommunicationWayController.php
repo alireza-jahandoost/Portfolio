@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCommunicationWayRequest;
 use App\Http\Requests\UpdateCommunicationWayRequest;
 use App\Models\CommunicationWay;
+use Inertia\Inertia;
 
 class CommunicationWayController extends Controller
 {
@@ -54,11 +55,13 @@ class CommunicationWayController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\CommunicationWay  $communicationWay
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
-    public function edit(CommunicationWay $communicationWay)
+    public function edit()
     {
-        //
+        return Inertia::render('AdminPanel/CommunicationWays/Edit', [
+            'communicationWays' => CommunicationWay::all()
+        ]);
     }
 
     /**

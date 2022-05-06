@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommunicationWayController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProjectSectionController;
@@ -39,5 +40,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('user_profile.update');
             Route::delete('user_profile_image', [UserController::class, 'delete_image'])
                 ->name('user_profile.delete_image');
+
+            Route::get('communication_ways/edit', [CommunicationWayController::class, 'edit'])
+                ->name('communication_ways.edit');
         }
     );
