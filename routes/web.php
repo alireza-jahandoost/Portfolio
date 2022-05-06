@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +32,10 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('landing_page.edit');
             Route::put('landing_page', [LandingPageController::class, 'update'])
                 ->name('landing_page.update');
+
+            Route::get('user_profile/edit', [UserController::class, 'edit'])
+                ->name('user_profile.edit');
+            Route::put('user_profile', [UserController::class, 'update'])
+                ->name('user_profile.update');
         }
     );
