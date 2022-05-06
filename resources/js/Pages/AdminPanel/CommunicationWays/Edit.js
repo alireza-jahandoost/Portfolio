@@ -2,9 +2,7 @@ import React from "react";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Flowbite/Button/Button";
-import TextInput from "@/Components/Flowbite/Input/TextInput";
 import changeHandler from "@/Utilities/changeHandler";
-import Card from "@/Components/Personalized/Card/Card";
 import FloatingOutlinedInput from "@/Components/Flowbite/Input/FloatingOutlinedInput";
 
 const EditCommunicationWays = (props) => {
