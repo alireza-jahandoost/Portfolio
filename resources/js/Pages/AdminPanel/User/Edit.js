@@ -64,9 +64,9 @@ const EditUserInformation = (props) => {
 
             <div className="p-4">
                 <form onSubmit={handleSubmit}>
-                    <div className="grid">
-                        <div>
-                            <div className="my-4">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="lg:col-span-2">
+                            <div>
                                 <TextInput
                                     name="name"
                                     value={data.name}
@@ -77,7 +77,7 @@ const EditUserInformation = (props) => {
                                     placeholder="User's Full Name"
                                 />
                             </div>
-                            <div className="my-4">
+                            <div>
                                 <TextInput
                                     type="email"
                                     name="email"
@@ -90,9 +90,9 @@ const EditUserInformation = (props) => {
                                 />
                             </div>
                         </div>
-                        <div className="my-4 flex justify-center">
+                        <div className="flex justify-center">
                             {props.auth.user.image ? (
-                                <div className="w-52 h-52 relative">
+                                <div className="w-52 h-52 lg:w-72 lg:h-72 relative">
                                     <img
                                         className="peer rounded-full h-full w-full"
                                         src={`/${props.auth.user.image}`}
@@ -116,7 +116,7 @@ const EditUserInformation = (props) => {
                             )}
                         </div>
                     </div>
-                    <div className="my-4">
+                    <div>
                         <Textarea
                             id="about_me"
                             value={data.about_me}
