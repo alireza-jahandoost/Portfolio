@@ -5,7 +5,7 @@ import EditLink from "@/Partials/AdminPanel/Dashboard/EditLink";
 const UserSection = ({ auth }) => {
     const imageUrl = auth.user.image
         ? auth.user.image
-        : "/images/unknownUser.png";
+        : "images/unknownUser.png";
     return (
         <div className="h-full flex flex-col">
             <h3 className="font-bold text-center">User Information</h3>
@@ -13,8 +13,8 @@ const UserSection = ({ auth }) => {
                 <div className="flex gap-4 mt-6">
                     <div>
                         <img
-                            className="h-20 w-20"
-                            src={imageUrl}
+                            className="h-20 w-20 rounded-full"
+                            src={`/${imageUrl}`}
                             alt="User Image"
                         />
                     </div>
