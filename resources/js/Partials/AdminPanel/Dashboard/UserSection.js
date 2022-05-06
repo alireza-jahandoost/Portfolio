@@ -35,7 +35,7 @@ const UserSection = ({ auth }) => {
                 </div>
             </div>
             <div className="flex justify-end">
-                <EditLink />
+                <EditLink href={route("admin.user_profile.edit")} />
             </div>
         </div>
     );
