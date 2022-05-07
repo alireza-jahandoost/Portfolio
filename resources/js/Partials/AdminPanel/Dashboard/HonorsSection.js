@@ -23,7 +23,7 @@ const HonorsSection = ({ honors }) => {
                 )}
             </div>
             <div className="flex justify-end">
-                <EditLink />
+                <EditLink href={route("admin.honors.edit")} />
             </div>
         </div>
     );
