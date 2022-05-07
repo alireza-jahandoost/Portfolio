@@ -19,7 +19,7 @@ class ProjectController extends Controller
     public function index()
     {
         return Inertia::render('AdminPanel/Projects/Index', [
-            'projects' => Project::all(),
+            'projects' => Project::with('images')->with('projectSection')->get(),
         ]);
     }
 
