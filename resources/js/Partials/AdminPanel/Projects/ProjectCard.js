@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@/Components/Personalized/Card/Card";
 import { Link } from "@inertiajs/inertia-react";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, handleDelete }) => {
     return (
         <Card withoutPadding={true}>
             <img
@@ -45,13 +45,19 @@ const ProjectCard = ({ project }) => {
                             </Link>
                         )}
                     </div>
-                    <div>
+                    <div className="flex gap-2">
                         <Link
                             className="text-gray-600 hover:text-gray-700 active:text-gray-800"
                             href={route("admin.projects.edit", [project.id])}
                         >
                             <i className="fa-solid fa-edit fa-xl" />
                         </Link>
+                        <button
+                            onClick={() => handleDelete({ project })}
+                            className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                        >
+                            <i className="fa-solid fa-trash fa-xl" />
+                        </button>
                     </div>
                 </div>
             </div>
