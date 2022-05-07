@@ -15,6 +15,7 @@ const ProjectCard = ({ project, handleDelete }) => {
                 <div>
                     <span>project section: </span>
                     <Link
+                        className="text-blue-600 font-bold"
                         href={route("admin.project_sections.edit", [
                             project.project_section_id,
                         ])}
