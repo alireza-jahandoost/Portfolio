@@ -8,7 +8,7 @@ import Toggle from "@/Components/Flowbite/Toggle/Toggle";
 
 const EditWorkExperiences = (props) => {
     const { put, data, setData, errors } = useForm({
-        workExperiences: props.workExperiences,
+        work_experiences: props.workExperiences,
     });
 
     const addWorkExperience = () => {
@@ -16,14 +16,14 @@ const EditWorkExperiences = (props) => {
             while (true) {
                 const id = Math.floor(Math.random() * 1000000);
                 if (
-                    data.workExperiences.findIndex((we) => we.id === id) === -1
+                    data.work_experiences.findIndex((we) => we.id === id) === -1
                 ) {
                     return id;
                 }
             }
         })();
-        setData("workExperiences", [
-            ...data.workExperiences,
+        setData("work_experiences", [
+            ...data.work_experiences,
             {
                 id,
                 start: "",
@@ -36,8 +36,8 @@ const EditWorkExperiences = (props) => {
     };
     const changeWorkExperience = (we) => {
         setData(
-            "workExperiences",
-            data.workExperiences.map((workExperience) =>
+            "work_experiences",
+            data.work_experiences.map((workExperience) =>
                 workExperience.id === we.id ? we : workExperience
             )
         );
@@ -51,8 +51,8 @@ const EditWorkExperiences = (props) => {
     const handleDelete = (id) => {
         if (confirm("Are you sure, you want to delete this work experience?")) {
             setData(
-                "workExperiences",
-                data.workExperiences.filter((we) => we.id !== id)
+                "work_experiences",
+                data.work_experiences.filter((we) => we.id !== id)
             );
         }
     };
@@ -61,6 +61,7 @@ const EditWorkExperiences = (props) => {
         event.preventDefault();
         put(route("admin.work_experiences.update"));
     };
+    console.log(errors);
 
     return (
         <Authenticated
@@ -87,7 +88,7 @@ const EditWorkExperiences = (props) => {
                 />
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-8">
-                        {data.workExperiences.map((workExperience) => {
+                        {data.work_experiences.map((workExperience) => {
                             return (
                                 <div
                                     key={workExperience.id}

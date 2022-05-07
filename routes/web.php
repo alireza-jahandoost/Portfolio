@@ -55,5 +55,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
 
             Route::get('work_experiences/edit', [WorkExperienceController::class, 'edit'])
                 ->name('work_experiences.edit');
+            Route::put('work_experiences', [WorkExperienceController::class, 'update'])
+                ->name('work_experiences.update');
         }
     );

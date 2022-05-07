@@ -69,11 +69,19 @@ class WorkExperienceController extends Controller
      *
      * @param  \App\Http\Requests\UpdateWorkExperienceRequest  $request
      * @param  \App\Models\WorkExperience  $workExperience
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateWorkExperienceRequest $request, WorkExperience $workExperience)
+    public function update(UpdateWorkExperienceRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        WorkExperience::whereNotNull('id')->delete();
+
+        foreach($data['work_experiences'] as $workExperience){
+            WorkExperience::create($workExperience);
+        }
+
+        return back();
     }
 
     /**
