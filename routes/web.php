@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommunicationWayController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HonorController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SkillController;
@@ -45,5 +46,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('communication_ways.edit');
             Route::put('communication_ways', [CommunicationWayController::class, 'update'])
                 ->name('communication_ways.update');
+
+            Route::get('honors/edit', [HonorController::class, 'edit'])
+                ->name('honors.edit');
         }
     );

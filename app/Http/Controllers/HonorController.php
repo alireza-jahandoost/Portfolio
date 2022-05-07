@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHonorRequest;
 use App\Http\Requests\UpdateHonorRequest;
 use App\Models\Honor;
+use Inertia\Inertia;
 
 class HonorController extends Controller
 {
@@ -54,11 +55,13 @@ class HonorController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Honor  $honor
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit(Honor $honor)
     {
-        //
+        return Inertia::render('AdminPanel/Honors/Edit', [
+            'honors' => Honor::all(),
+        ]);
     }
 
     /**
