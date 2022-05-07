@@ -4,6 +4,7 @@ use App\Http\Controllers\CommunicationWayController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HonorController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\UserController;
@@ -57,5 +58,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('work_experiences.edit');
             Route::put('work_experiences', [WorkExperienceController::class, 'update'])
                 ->name('work_experiences.update');
+
+            Route::resource('projects', ProjectController::class);
         }
     );
