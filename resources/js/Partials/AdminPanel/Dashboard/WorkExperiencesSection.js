@@ -29,7 +29,7 @@ const WorkExperiencesSection = ({ workExperiences }) => {
                 )}
             </div>
             <div className="flex justify-end">
-                <EditLink />
+                <EditLink href={route("admin.work_experiences.edit")} />
             </div>
         </div>
     );
