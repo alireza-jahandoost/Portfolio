@@ -1,6 +1,6 @@
 import React from "react";
 
-const FileInput = ({ id, label, onChange, name }) => {
+const FileInput = ({ id, label, onChange, name, multiple = false }) => {
     return (
         <div className="flex justify-center items-center w-full">
             <label
@@ -36,6 +36,7 @@ const FileInput = ({ id, label, onChange, name }) => {
                     name={name}
                     type="file"
                     className="hidden"
+                    multiple={multiple}
                 />
             </label>
         </div>

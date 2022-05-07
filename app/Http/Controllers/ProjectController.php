@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\ProjectSection;
 use Inertia\Inertia;
 
 class ProjectController extends Controller
@@ -24,11 +25,13 @@ class ProjectController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
-        //
+        return Inertia::render('AdminPanel/Projects/Create', [
+            'projectSections' => ProjectSection::all(),
+        ]);
     }
 
     /**

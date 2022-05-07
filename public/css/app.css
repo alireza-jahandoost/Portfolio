@@ -961,6 +961,10 @@ input[type="range"]::-ms-fill-lower {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1081,6 +1085,9 @@ input[type="range"]::-ms-fill-lower {
 .h-full {
   height: 100%;
 }
+.h-32 {
+  height: 8rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1119,6 +1126,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .w-44 {
   width: 11rem;
+}
+.w-32 {
+  width: 8rem;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -1224,6 +1234,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .justify-items-center {
   justify-items: center;
@@ -1393,6 +1406,10 @@ input[type="range"]::-ms-fill-lower {
 }
 .fill-current {
   fill: currentColor;
+}
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .p-6 {
   padding: 1.5rem;
