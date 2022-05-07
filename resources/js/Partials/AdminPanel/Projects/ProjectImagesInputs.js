@@ -74,7 +74,7 @@ const ProjectImagesInputs = ({ images, changeImages }) => {
                                 <img
                                     className="h-64 w-auto rounded"
                                     src={
-                                        image.image_url.startsWith("/")
+                                        image.image_url.startsWith("blob")
                                             ? image.image_url
                                             : `/${image.image_url}`
                                     }
