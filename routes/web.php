@@ -7,6 +7,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkExperienceController;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
 
@@ -51,5 +52,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('honors.edit');
             Route::put('honors', [HonorController::class, 'update'])
                 ->name('honors.update');
+
+            Route::get('work_experiences/edit', [WorkExperienceController::class, 'edit'])
+                ->name('work_experiences.edit');
         }
     );

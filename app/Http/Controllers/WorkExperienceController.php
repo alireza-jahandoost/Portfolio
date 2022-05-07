@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreWorkExperienceRequest;
 use App\Http\Requests\UpdateWorkExperienceRequest;
 use App\Models\WorkExperience;
+use Inertia\Inertia;
 
 class WorkExperienceController extends Controller
 {
@@ -54,11 +55,13 @@ class WorkExperienceController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\WorkExperience  $workExperience
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
-    public function edit(WorkExperience $workExperience)
+    public function edit()
     {
-        //
+        return Inertia::render('AdminPanel/WorkExperiences/Edit', [
+            'workExperiences' => WorkExperience::all(),
+        ]);
     }
 
     /**
