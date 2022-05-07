@@ -33,6 +33,7 @@ const ProjectCard = ({ project, handleDelete }) => {
                             <Link
                                 className="text-gray-600 hover:text-gray-700 active:text-gray-800"
                                 href={project.link_to_github}
+                                title="See project github page"
                             >
                                 <i className="fa-brands fa-github fa-xl" />
                             </Link>
@@ -41,6 +42,7 @@ const ProjectCard = ({ project, handleDelete }) => {
                             <Link
                                 className="text-gray-600 hover:text-gray-700 active:text-gray-800"
                                 href={project.link_to_production}
+                                title="See project in production"
                             >
                                 <i className="fa-solid fa-globe fa-xl" />
                             </Link>
@@ -50,12 +52,14 @@ const ProjectCard = ({ project, handleDelete }) => {
                         <Link
                             className="text-gray-600 hover:text-gray-700 active:text-gray-800"
                             href={route("admin.projects.edit", [project.id])}
+                            title="Edit project"
                         >
                             <i className="fa-solid fa-edit fa-xl" />
                         </Link>
                         <button
                             onClick={() => handleDelete({ project })}
                             className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                            title="Delete project"
                         >
                             <i className="fa-solid fa-trash fa-xl" />
                         </button>
