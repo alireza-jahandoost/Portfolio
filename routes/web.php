@@ -49,5 +49,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
 
             Route::get('honors/edit', [HonorController::class, 'edit'])
                 ->name('honors.edit');
+            Route::put('honors', [HonorController::class, 'update'])
+                ->name('honors.update');
         }
     );

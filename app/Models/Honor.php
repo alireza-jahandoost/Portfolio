@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Honor extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'date',
+    ];
 }

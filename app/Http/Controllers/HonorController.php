@@ -69,11 +69,19 @@ class HonorController extends Controller
      *
      * @param  \App\Http\Requests\UpdateHonorRequest  $request
      * @param  \App\Models\Honor  $honor
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateHonorRequest $request, Honor $honor)
+    public function update(UpdateHonorRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Honor::whereNotNull('id')->delete();
+
+        foreach($data['honors'] as $honor){
+            Honor::create($honor);
+        }
+
+        return back();
     }
 
     /**

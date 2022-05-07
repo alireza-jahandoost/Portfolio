@@ -13,7 +13,7 @@ class UpdateHonorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateHonorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'honors' => 'array',
+            'honors.*.title' => 'required|string|max:60',
+            'honors.*.date' => 'required|date',
+            'honors.*.description' => 'required|string|max:300',
         ];
     }
 }
