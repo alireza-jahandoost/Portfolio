@@ -8,7 +8,9 @@ import Toggle from "@/Components/Flowbite/Toggle/Toggle";
 
 const EditWorkExperiences = (props) => {
     const { put, data, setData, errors } = useForm({
-        work_experiences: props.workExperiences,
+        work_experiences: props.workExperiences.map((we) =>
+            we.end ? we : { ...we, end: "" }
+        ),
     });
 
     const addWorkExperience = () => {
@@ -61,7 +63,6 @@ const EditWorkExperiences = (props) => {
         event.preventDefault();
         put(route("admin.work_experiences.update"));
     };
-    console.log(errors);
 
     return (
         <Authenticated
@@ -133,7 +134,9 @@ const EditWorkExperiences = (props) => {
                                                         )
                                                     }
                                                     id={`workExperience-${workExperience.id}-end`}
-                                                    required={true}
+                                                    required={
+                                                        !workExperience.is_working
+                                                    }
                                                     label="WorkExperience End Date"
                                                     placeholder="End Date of WorkExperience"
                                                 />

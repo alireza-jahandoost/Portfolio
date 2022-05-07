@@ -77,6 +77,12 @@ class WorkExperienceController extends Controller
 
         WorkExperience::whereNotNull('id')->delete();
 
+        foreach($data['work_experiences'] as $work_experience){
+            if(!$work_experience['is_working'] && !isset($work_experience['end'])){
+                abort(403);
+            }
+        }
+
         foreach($data['work_experiences'] as $workExperience){
             WorkExperience::create($workExperience);
         }
