@@ -8,7 +8,6 @@ export default function changeHandler(event) {
         case "INPUT":
         case "TEXTAREA":
             let newValue;
-            console.log(event.target.value);
             switch (event.target.type) {
                 case "checkbox":
                     newValue = event.target.checked;
