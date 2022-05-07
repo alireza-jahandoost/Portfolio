@@ -26,17 +26,33 @@ const ProjectCard = ({ project }) => {
                     <span>number of images: </span>
                     <span>{project.images.length}</span>
                 </div>
-                <div className="flex gap-2">
-                    {project.link_to_github && (
-                        <Link href={project.link_to_github}>
-                            <i className="fa-brands fa-github fa-xl" />
+                <div className="flex justify-between">
+                    <div className="flex gap-2">
+                        {project.link_to_github && (
+                            <Link
+                                className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                                href={project.link_to_github}
+                            >
+                                <i className="fa-brands fa-github fa-xl" />
+                            </Link>
+                        )}
+                        {project.link_to_production && (
+                            <Link
+                                className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                                href={project.link_to_production}
+                            >
+                                <i className="fa-solid fa-globe fa-xl" />
+                            </Link>
+                        )}
+                    </div>
+                    <div>
+                        <Link
+                            className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                            href={route("admin.projects.edit", [project.id])}
+                        >
+                            <i className="fa-solid fa-edit fa-xl" />
                         </Link>
-                    )}
-                    {project.link_to_production && (
-                        <Link href={project.link_to_production}>
-                            <i className="fa-solid fa-globe fa-xl" />
-                        </Link>
-                    )}
+                    </div>
                 </div>
             </div>
         </Card>
