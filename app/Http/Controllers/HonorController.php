@@ -57,7 +57,7 @@ class HonorController extends Controller
      * @param  \App\Models\Honor  $honor
      * @return \Inertia\Response
      */
-    public function edit(Honor $honor)
+    public function edit()
     {
         return Inertia::render('AdminPanel/Honors/Edit', [
             'honors' => Honor::all(),
