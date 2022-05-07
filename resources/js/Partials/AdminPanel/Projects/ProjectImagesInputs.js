@@ -73,7 +73,11 @@ const ProjectImagesInputs = ({ images, changeImages }) => {
                             {image.image_url !== "" ? (
                                 <img
                                     className="h-64 w-auto rounded"
-                                    src={image.image_url}
+                                    src={
+                                        image.image_url.startsWith("/")
+                                            ? image.image_url
+                                            : `/${image.image_url}`
+                                    }
                                     alt="project image"
                                 />
                             ) : (

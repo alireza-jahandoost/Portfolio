@@ -11,9 +11,9 @@ class UpdateProjectRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|string|max:60',
+            'description' => 'required|string|max:1200',
+            'link_to_github' => 'required|string|max:200',
+            'link_to_production' => 'required|string|max:255',
+            'project_section_id' => 'required|integer|exists:project_sections,id',
+            'images' => 'nullable|array',
+            'images.*.file' => 'required|image|max:3000',
+            'images.*.image_alt' => 'required|string|max:80',
+            'images.*.image_title' => 'required|string|max:80',
         ];
     }
 }

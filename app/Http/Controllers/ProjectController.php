@@ -11,6 +11,27 @@ use Inertia\Inertia;
 
 class ProjectController extends Controller
 {
+
+    protected function setAttributes(Project $project, array $data)
+    {
+        $keys = ['title', 'description', 'link_to_github', 'link_to_production', 'project_section_id'];
+
+        foreach ($keys as $key) {
+            $project->$key = $data[$key];
+        }
+    }
+
+    protected function createImages(Project $project, array $images){
+        foreach ($images as $image) {
+            $projectImage = new ProjectImage;
+            $projectImage->image_title = $image['image_title'];
+            $projectImage->image_alt = $image['image_alt'];
+            $projectImage->image_url = $image['file']->store('projectImages');
+            $projectImage->project_id = $project->id;
+            $projectImage->save();
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -50,27 +71,11 @@ class ProjectController extends Controller
         $this->setAttributes($project, $data);
         $project->order = $project->projectSection->projects()->max('order') + 1;
 
+        $this->createImages($project, $data['images']);
+
         $project->save();
 
-        foreach ($data['images'] as $image) {
-            $projectImage = new ProjectImage;
-            $projectImage->image_title = $image['image_title'];
-            $projectImage->image_alt = $image['image_alt'];
-            $projectImage->image_url = $image['file']->store('projectImages');
-            $projectImage->project_id = $project->id;
-            $projectImage->save();
-        }
-
         return back();
-    }
-
-    protected function setAttributes(Project $project, array $data)
-    {
-        $keys = ['title', 'description', 'link_to_github', 'link_to_production', 'project_section_id'];
-
-        foreach ($keys as $key) {
-            $project->$key = $data[$key];
-        }
     }
 
     /**
@@ -88,11 +93,15 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit(Project $project)
     {
-        //
+        $project->load('images');
+        return Inertia::render('AdminPanel/Projects/Edit', [
+            'project' => $project,
+            'projectSections' => ProjectSection::all(),
+        ]);
     }
 
     /**
@@ -100,11 +109,19 @@ class ProjectController extends Controller
      *
      * @param \App\Http\Requests\UpdateProjectRequest $request
      * @param \App\Models\Project $project
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+
+        $this->setAttributes($project, $data);
+
+        $project->save();
+
+        $this->createImages($project, $data['images']);
+
+        return back();
     }
 
     /**
