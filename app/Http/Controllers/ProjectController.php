@@ -12,26 +12,6 @@ use Inertia\Inertia;
 class ProjectController extends Controller
 {
 
-    protected function setAttributes(Project $project, array $data)
-    {
-        $keys = ['title', 'description', 'link_to_github', 'link_to_production', 'project_section_id'];
-
-        foreach ($keys as $key) {
-            $project->$key = $data[$key];
-        }
-    }
-
-    protected function createImages(Project $project, array $images){
-        foreach ($images as $image) {
-            $projectImage = new ProjectImage;
-            $projectImage->image_title = $image['image_title'];
-            $projectImage->image_alt = $image['image_alt'];
-            $projectImage->image_url = $image['file']->store('projectImages');
-            $projectImage->project_id = $project->id;
-            $projectImage->save();
-        }
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -78,6 +58,27 @@ class ProjectController extends Controller
         return back();
     }
 
+    protected function setAttributes(Project $project, array $data)
+    {
+        $keys = ['title', 'description', 'link_to_github', 'link_to_production', 'project_section_id'];
+
+        foreach ($keys as $key) {
+            $project->$key = $data[$key];
+        }
+    }
+
+    protected function createImages(Project $project, array $images)
+    {
+        foreach ($images as $image) {
+            $projectImage = new ProjectImage;
+            $projectImage->image_title = $image['image_title'];
+            $projectImage->image_alt = $image['image_alt'];
+            $projectImage->image_url = $image['file']->store('projectImages');
+            $projectImage->project_id = $project->id;
+            $projectImage->save();
+        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -122,7 +123,9 @@ class ProjectController extends Controller
 
         $project->save();
 
-        $this->createImages($project, $data['new_images']);
+        if (isset($data['new_images'])) {
+            $this->createImages($project, $data['new_images']);
+        }
 
         return back();
     }
