@@ -127,6 +127,13 @@ class ProjectController extends Controller
             $this->createImages($project, $data['new_images']);
         }
 
+        if(isset($data['deleted_images'])){
+            foreach($data['deleted_images'] as $imageId){
+                $image = ProjectImage::find($imageId);
+                $image->delete();
+            }
+        }
+
         return back();
     }
 

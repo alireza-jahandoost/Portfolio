@@ -4,7 +4,7 @@ import TextInput from "@/Components/Flowbite/Input/TextInput";
 import Button from "@/Components/Flowbite/Button/Button";
 import FileInput from "@/Components/Flowbite/FileInput/FileInput";
 
-const ProjectImagesInputs = ({ images, changeImages }) => {
+const ProjectImagesInputs = ({ images, changeImages, deleteImage }) => {
     useEffect(() => {
         images.forEach((image) => {
             if (image.file && !image.image_url) {
@@ -53,77 +53,86 @@ const ProjectImagesInputs = ({ images, changeImages }) => {
         );
     };
 
-    const deleteImage = (image) => {
-        changeImages(images.filter((img) => img.mask_id !== image.mask_id));
-    };
-
     return (
         <div className="my-8 grid gap-4">
             <h4>Project Images</h4>
             <div>
                 <Button type="button" onClick={addImage} label="Add Image" />
             </div>
-            {images.map((image) => {
-                return (
-                    <div
-                        className="grid md:grid-cols-2 gap-2"
-                        key={image.mask_id}
-                    >
-                        <div className="flex justify-center">
-                            {image.image_url !== "" ? (
-                                <img
-                                    className="h-64 w-auto rounded"
-                                    src={
-                                        image.image_url.startsWith("blob")
-                                            ? image.image_url
-                                            : `/${image.image_url}`
-                                    }
-                                    alt="project image"
-                                />
-                            ) : (
-                                <FileInput
-                                    id={`image-${image.mask_id}-file`}
-                                    label="Project Image"
-                                    onChange={(event) =>
-                                        changeImage(event, image)
-                                    }
-                                    name="file"
-                                />
-                            )}
-                        </div>
-                        <div>
-                            <div>
-                                <TextInput
-                                    onChange={(event) =>
-                                        changeImage(event, image)
-                                    }
-                                    id={`image-${image.mask_id}-alt`}
-                                    value={image.image_alt}
-                                    label="Image Alt"
-                                    name="image_alt"
-                                    placeholder="Image Alt"
-                                    required={true}
-                                    type="text"
-                                />
+            <div className="divide-y">
+                {images.map((image) => {
+                    return (
+                        <div
+                            className="grid md:grid-cols-2 gap-2 py-4"
+                            key={image.mask_id}
+                        >
+                            <div className="flex justify-center">
+                                {image.image_url !== "" ? (
+                                    <img
+                                        className="h-64 w-auto rounded"
+                                        src={
+                                            image.image_url.startsWith("blob")
+                                                ? image.image_url
+                                                : `/${image.image_url}`
+                                        }
+                                        alt="project image"
+                                    />
+                                ) : (
+                                    <FileInput
+                                        id={`image-${image.mask_id}-file`}
+                                        label="Project Image"
+                                        onChange={(event) =>
+                                            changeImage(event, image)
+                                        }
+                                        name="file"
+                                    />
+                                )}
                             </div>
-                            <div>
-                                <TextInput
-                                    onChange={(event) =>
-                                        changeImage(event, image)
-                                    }
-                                    id={`image-${image.mask_id}-title`}
-                                    value={image.image_title}
-                                    label="Image Title"
-                                    name="image_title"
-                                    placeholder="Image Title"
-                                    required={true}
-                                    type="text"
-                                />
+                            <div className="flex flex-col justify-between">
+                                <div className="grow">
+                                    <div>
+                                        <TextInput
+                                            onChange={(event) =>
+                                                changeImage(event, image)
+                                            }
+                                            id={`image-${image.mask_id}-alt`}
+                                            value={image.image_alt}
+                                            label="Image Alt"
+                                            name="image_alt"
+                                            placeholder="Image Alt"
+                                            required={true}
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div>
+                                        <TextInput
+                                            onChange={(event) =>
+                                                changeImage(event, image)
+                                            }
+                                            id={`image-${image.mask_id}-title`}
+                                            value={image.image_title}
+                                            label="Image Title"
+                                            name="image_title"
+                                            placeholder="Image Title"
+                                            required={true}
+                                            type="text"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex justify-center mt-4 md:justify-end md:mt-0">
+                                    <button
+                                        type="button"
+                                        onClick={() => deleteImage({ image })}
+                                        className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                                    >
+                                        <i className="fa-solid fa-trash fa-2xl" />
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </div>
     );
 };

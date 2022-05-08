@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
@@ -8,16 +8,16 @@ import ProjectImagesInputs from "@/Partials/AdminPanel/Projects/ProjectImagesInp
 import { Inertia } from "@inertiajs/inertia";
 
 const EditProject = (props) => {
+    const [images, setImages] = useState(
+        props.project.images.map((image) => ({ ...image, mask_id: image.id }))
+    );
     const { data, setData, errors, setError, reset } = useForm({
         title: props.project.title,
         description: props.project.description,
         link_to_github: props.project.link_to_github,
         link_to_production: props.project.link_to_production,
         project_section_id: props.project.project_section_id,
-        images: props.project.images.map((image) => ({
-            ...image,
-            mask_id: image.id,
-        })),
+        deleted_images: [],
     });
 
     const handleChange = (event) => {
@@ -36,9 +36,8 @@ const EditProject = (props) => {
                 link_to_github: data.link_to_github,
                 link_to_production: data.link_to_production,
                 project_section_id: data.project_section_id,
-                new_images: data.images.filter(
-                    (image) => image.file !== undefined
-                ),
+                new_images: images.filter((image) => image.file !== undefined),
+                deleted_images: data.deleted_images,
             },
             {
                 onError(err) {
@@ -47,6 +46,13 @@ const EditProject = (props) => {
                 },
             }
         );
+    };
+
+    const deleteImage = async ({ image }) => {
+        if (image.id) {
+            setData("deleted_images", [...data.deleted_images, image.id]);
+        }
+        setImages(images.filter((img) => img.mask_id !== image.id));
     };
 
     return (
@@ -70,10 +76,9 @@ const EditProject = (props) => {
                         errors={errors}
                     />
                     <ProjectImagesInputs
-                        images={data.images}
-                        changeImages={(newImages) =>
-                            setData("images", newImages)
-                        }
+                        images={images}
+                        changeImages={(newImages) => setImages(newImages)}
+                        deleteImage={deleteImage}
                     />
                     <Button
                         label="Edit Project"

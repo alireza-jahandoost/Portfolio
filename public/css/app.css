@@ -965,6 +965,10 @@ input[type="range"]::-ms-fill-lower {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1240,6 +1244,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .gap-4 {
   gap: 1rem;
+}
+.gap-10 {
+  gap: 2.5rem;
 }
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
@@ -2330,6 +2337,10 @@ input[type="range"]::-ms-fill-lower {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
