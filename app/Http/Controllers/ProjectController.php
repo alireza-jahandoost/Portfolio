@@ -113,6 +113,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+        // TODO: remove images of projects
+        // TODO: change image information
+        // TODO: change the order of projects in a project section
         $data = $request->validated();
 
         $this->setAttributes($project, $data);
