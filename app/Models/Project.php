@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * @property int|mixed $order
+ * @property mixed $projectSection
+ * @property mixed $project_section_id
+ */
 class Project extends Model
 {
     use HasFactory;

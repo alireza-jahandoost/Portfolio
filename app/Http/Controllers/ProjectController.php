@@ -47,6 +47,7 @@ class ProjectController extends Controller
         $data = $request->validated();
 
         $project = new Project;
+        $project->project_section_id = $data['project_section_id'];
 
         $this->setAttributes($project, $data);
         $project->order = $project->projectSection->projects()->max('order') + 1;
@@ -60,7 +61,7 @@ class ProjectController extends Controller
 
     protected function setAttributes(Project $project, array $data)
     {
-        $keys = ['title', 'description', 'link_to_github', 'link_to_production', 'project_section_id'];
+        $keys = ['title', 'description', 'link_to_github', 'link_to_production'];
 
         foreach ($keys as $key) {
             $project->$key = $data[$key];
@@ -118,6 +119,14 @@ class ProjectController extends Controller
         $data = $request->validated();
 
         $this->setAttributes($project, $data);
+        if($project->project_section_id !== $data['project_section_id']){
+            foreach(Project::where('project_section_id', $project->project_section_id)->where('order','>',$project->order)->get() as $nextProject){
+                $nextProject->decrement('order');
+                $nextProject->save();
+            }
+            $project->project_section_id = $data['project_section_id'];
+            $project->order = $project->projectSection->projects()->max('order') + 1;
+        }
 
         $project->save();
 
