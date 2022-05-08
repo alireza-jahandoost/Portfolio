@@ -51,9 +51,9 @@ class ProjectController extends Controller
         $this->setAttributes($project, $data);
         $project->order = $project->projectSection->projects()->max('order') + 1;
 
-        $this->createImages($project, $data['images']);
-
         $project->save();
+
+        $this->createImages($project, $data['images']);
 
         return back();
     }

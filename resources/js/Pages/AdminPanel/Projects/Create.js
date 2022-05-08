@@ -55,6 +55,14 @@ const CreateProject = (props) => {
                         changeImages={(newImages) =>
                             setData("images", newImages)
                         }
+                        deleteImage={({ image }) =>
+                            setData(
+                                "images",
+                                data.images.filter(
+                                    (img) => img.mask_id !== image.mask_id
+                                )
+                            )
+                        }
                     />
                     <Button
                         label="Create Project Section"
