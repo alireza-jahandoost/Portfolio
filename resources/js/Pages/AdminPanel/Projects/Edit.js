@@ -48,6 +48,7 @@ const EditProject = (props) => {
                 project_section_id: data.project_section_id,
                 new_images: images.filter((image) => image.file !== undefined),
                 deleted_images: data.deleted_images,
+                changed_images: images.filter((image) => image.id),
             },
             {
                 onError(err) {

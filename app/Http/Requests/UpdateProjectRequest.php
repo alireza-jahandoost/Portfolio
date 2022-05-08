@@ -35,6 +35,10 @@ class UpdateProjectRequest extends FormRequest
             'new_images.*.image_title' => 'required|string|max:80',
             'deleted_images' => 'nullable|array',
             'deleted_images.*' => 'required|integer|exists:project_images,id',
+            'changed_images' => 'nullable|array',
+            'changed_images.*.id' => 'required|integer|exists:project_images,id',
+            'changed_images.*.image_title' => 'required|string|max:80',
+            'changed_images.*.image_alt' => 'required|string|max:80',
         ];
     }
 }

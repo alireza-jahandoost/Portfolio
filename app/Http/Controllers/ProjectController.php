@@ -114,8 +114,6 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        // TODO: remove images of projects
-        // TODO: change image information
         // TODO: change the order of projects in a project section
         $data = $request->validated();
 
@@ -125,6 +123,15 @@ class ProjectController extends Controller
 
         if (isset($data['new_images'])) {
             $this->createImages($project, $data['new_images']);
+        }
+
+        if(isset($data['changed_images'])){
+            foreach($data['changed_images'] as $image){
+               $imageModel = ProjectImage::find($image['id']);
+               $imageModel->image_title = $image['image_title'];
+               $imageModel->image_alt = $image['image_alt'];
+               $imageModel->save();
+            }
         }
 
         if(isset($data['deleted_images'])){
