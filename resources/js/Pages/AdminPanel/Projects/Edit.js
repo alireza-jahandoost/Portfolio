@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
@@ -11,6 +11,16 @@ const EditProject = (props) => {
     const [images, setImages] = useState(
         props.project.images.map((image) => ({ ...image, mask_id: image.id }))
     );
+
+    useEffect(() => {
+        setImages(
+            props.project.images.map((image) => ({
+                ...image,
+                mask_id: image.id,
+            }))
+        );
+    }, [props.project.images]);
+
     const { data, setData, errors, setError, reset } = useForm({
         title: props.project.title,
         description: props.project.description,

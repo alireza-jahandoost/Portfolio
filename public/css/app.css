@@ -965,10 +965,6 @@ input[type="range"]::-ms-fill-lower {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1085,9 +1081,6 @@ input[type="range"]::-ms-fill-lower {
 }
 .h-full {
   height: 100%;
-}
-.h-32 {
-  height: 8rem;
 }
 .h-96 {
   height: 24rem;
@@ -1250,9 +1243,6 @@ input[type="range"]::-ms-fill-lower {
 }
 .gap-4 {
   gap: 1rem;
-}
-.gap-10 {
-  gap: 2.5rem;
 }
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
@@ -2229,18 +2219,6 @@ input[type="range"]::-ms-fill-lower {
     height: 5rem;
   }
 
-  .sm\:h-60 {
-    height: 15rem;
-  }
-
-  .sm\:h-72 {
-    height: 18rem;
-  }
-
-  .sm\:h-96 {
-    height: 24rem;
-  }
-
   .sm\:max-w-md {
     max-width: 28rem;
   }
@@ -2335,10 +2313,6 @@ input[type="range"]::-ms-fill-lower {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-72 {
-    height: 18rem;
   }
 
   .md\:h-64 {
