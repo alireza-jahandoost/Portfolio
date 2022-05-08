@@ -1086,6 +1086,12 @@ input[type="range"]::-ms-fill-lower {
 .h-full {
   height: 100%;
 }
+.h-32 {
+  height: 8rem;
+}
+.h-96 {
+  height: 24rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2223,6 +2229,18 @@ input[type="range"]::-ms-fill-lower {
     height: 5rem;
   }
 
+  .sm\:h-60 {
+    height: 15rem;
+  }
+
+  .sm\:h-72 {
+    height: 18rem;
+  }
+
+  .sm\:h-96 {
+    height: 24rem;
+  }
+
   .sm\:max-w-md {
     max-width: 28rem;
   }
@@ -2317,6 +2335,14 @@ input[type="range"]::-ms-fill-lower {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-72 {
+    height: 18rem;
+  }
+
+  .md\:h-64 {
+    height: 16rem;
   }
 
   .md\:w-auto {

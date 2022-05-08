@@ -6,7 +6,7 @@ const ProjectCard = ({ project, handleDelete }) => {
     return (
         <Card withoutPadding={true}>
             <img
-                className="rounded-t-lg w-full"
+                className="rounded-t-lg w-full h-96 md:h-64"
                 src={`/${project.images[0].image_url}`}
                 alt={project.images[0].image_alt}
             />
