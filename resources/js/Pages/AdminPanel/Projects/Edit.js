@@ -36,7 +36,9 @@ const EditProject = (props) => {
                 link_to_github: data.link_to_github,
                 link_to_production: data.link_to_production,
                 project_section_id: data.project_section_id,
-                images: data.images.filter((image) => image.file !== undefined),
+                new_images: data.images.filter(
+                    (image) => image.file !== undefined
+                ),
             },
             {
                 onError(err) {

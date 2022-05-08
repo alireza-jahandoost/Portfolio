@@ -122,7 +122,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        $this->createImages($project, $data['images']);
+        $this->createImages($project, $data['new_images']);
 
         return back();
     }

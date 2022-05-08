@@ -29,10 +29,10 @@ class UpdateProjectRequest extends FormRequest
             'link_to_github' => 'required|string|max:200',
             'link_to_production' => 'required|string|max:255',
             'project_section_id' => 'required|integer|exists:project_sections,id',
-            'images' => 'nullable|array',
-            'images.*.file' => 'required|image|max:3000',
-            'images.*.image_alt' => 'required|string|max:80',
-            'images.*.image_title' => 'required|string|max:80',
+            'new_images' => 'nullable|array',
+            'new_images.*.file' => 'required|image|max:3000',
+            'new_images.*.image_alt' => 'required|string|max:80',
+            'new_images.*.image_title' => 'required|string|max:80',
         ];
     }
 }
