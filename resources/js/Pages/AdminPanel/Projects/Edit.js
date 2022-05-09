@@ -6,6 +6,7 @@ import Button from "@/Components/Flowbite/Button/Button";
 import FormInputs from "@/Partials/AdminPanel/Projects/FormInputs";
 import ProjectImagesInputs from "@/Partials/AdminPanel/Projects/ProjectImagesInputs";
 import { Inertia } from "@inertiajs/inertia";
+import SkillsSection from "@/Partials/AdminPanel/Projects/SkillsSection";
 
 const EditProject = (props) => {
     const [images, setImages] = useState(
@@ -85,6 +86,11 @@ const EditProject = (props) => {
                         projectSections={props.projectSections}
                         data={data}
                         errors={errors}
+                    />
+                    <SkillsSection
+                        skills={props.skills}
+                        project={props.project}
+                        className="my-8"
                     />
                     <ProjectImagesInputs
                         images={images}

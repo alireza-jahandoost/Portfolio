@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\ProjectImage;
 use App\Models\ProjectSection;
+use App\Models\Skill;
 use Inertia\Inertia;
 
 class ProjectController extends Controller
@@ -100,9 +101,11 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $project->load('images');
+        $project->load('skills');
         return Inertia::render('AdminPanel/Projects/Edit', [
             'project' => $project,
             'projectSections' => ProjectSection::all(),
+            'skills' => Skill::all(),
         ]);
     }
 
