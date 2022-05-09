@@ -34,6 +34,10 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
             Route::resource('project_sections', ProjectSectionController::class);
             Route::get('project_sections/{project_section}/projects', [ProjectSectionController::class, 'index_projects'])
                 ->name('project_sections.index_projects');
+            Route::put('project_sections/{project_section}/projects/{project}/up', [ProjectSectionController::class, 'move_project_up'])
+                ->name('project_sections.move_project_up');
+            Route::put('project_sections/{project_section}/projects/{project}/down', [ProjectSectionController::class, 'move_project_down'])
+                ->name('project_sections.move_project_down');
 
             Route::get('landing_page/edit', [LandingPageController::class, 'edit'])
                 ->name('landing_page.edit');

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property mixed $projects
+ * @property mixed $id
  */
 class ProjectSection extends Model
 {
@@ -23,6 +24,6 @@ class ProjectSection extends Model
      */
     public function projects(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Project::class)->orderBy('order');
     }
 }

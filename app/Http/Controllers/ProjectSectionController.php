@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectSectionRequest;
 use App\Http\Requests\UpdateProjectSectionRequest;
+use App\Models\Project;
 use App\Models\ProjectSection;
 use Inertia\Inertia;
 
@@ -113,5 +114,37 @@ class ProjectSectionController extends Controller
         return Inertia::render('AdminPanel/ProjectSections/IndexProjects', [
             'projectSection' => $projectSection,
         ]);
+    }
+
+    public function move_project_up(ProjectSection $projectSection, Project $project){
+        if($project->project_section_id !== $projectSection->id || $project->order === 1){
+            abort(403);
+        }
+
+        $prevProject = $projectSection->projects()->where('order', $project->order-1)->first();
+
+        $prevProject->increment('order');
+        $prevProject->save();
+
+        $project->decrement('order');
+        $project->save();
+
+        return back();
+    }
+
+    public function move_project_down(ProjectSection $projectSection, Project $project){
+        if($project->project_section_id !== $projectSection->id || $project->order === $projectSection->projects()->count()){
+            abort(403);
+        }
+
+        $nextProject = $projectSection->projects()->where('order', $project->order+1)->first();
+
+        $nextProject->decrement('order');
+        $nextProject->save();
+
+        $project->increment('order');
+        $project->save();
+
+        return back();
     }
 }

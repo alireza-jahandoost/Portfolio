@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 import ControlButton from "@/Components/Personalized/Button/ControlButton";
+import { Inertia } from "@inertiajs/inertia";
 
 const IndexProjectSections = (props) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const moveUp = ({ projectId }) => {
+        setIsLoading(true);
+        Inertia.put(
+            route("admin.project_sections.move_project_up", [
+                props.projectSection.id,
+                projectId,
+            ]),
+            {},
+            {
+                onFinish() {
+                    setIsLoading(false);
+                },
+                preserveScroll: true,
+            }
+        );
+    };
+    const moveDown = ({ projectId }) => {
+        setIsLoading(true);
+        Inertia.put(
+            route("admin.project_sections.move_project_down", [
+                props.projectSection.id,
+                projectId,
+            ]),
+            {},
+            {
+                onFinish() {
+                    setIsLoading(false);
+                },
+                preserveScroll: true,
+            }
+        );
+    };
+
     return (
         <Authenticated
             auth={props.auth}
@@ -33,18 +69,22 @@ const IndexProjectSections = (props) => {
                             <div className="flex gap-2 justify-center">
                                 <ControlButton
                                     title="Move down"
-                                    onClick={() => {}}
+                                    onClick={() =>
+                                        moveDown({ projectId: project.id })
+                                    }
                                     disabled={
                                         props.projectSection.projects.length ===
-                                        idx + 1
+                                            idx + 1 || isLoading
                                     }
                                 >
                                     <i className="fa-solid fa-arrow-down fa-xl" />
                                 </ControlButton>
                                 <ControlButton
                                     title="Move up"
-                                    onClick={() => {}}
-                                    disabled={idx === 0}
+                                    onClick={() =>
+                                        moveUp({ projectId: project.id })
+                                    }
+                                    disabled={idx === 0 || isLoading}
                                 >
                                     <i className="fa-solid fa-arrow-up fa-xl" />
                                 </ControlButton>
