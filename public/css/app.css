@@ -1046,6 +1046,9 @@ input[type="range"]::-ms-fill-lower {
 .inline-flex {
   display: inline-flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -1474,6 +1477,10 @@ input[type="range"]::-ms-fill-lower {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .pt-8 {
   padding-top: 2rem;

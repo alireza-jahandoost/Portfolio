@@ -101,4 +101,17 @@ class ProjectSectionController extends Controller
 
         return back();
     }
+
+    /**
+     * Show projects of a project section
+     *
+     * @param ProjectSection $projectSection
+     * @return \Inertia\Response
+     */
+    public function index_projects(ProjectSection $projectSection){
+        $projectSection->load('projects');
+        return Inertia::render('AdminPanel/ProjectSections/IndexProjects', [
+            'projectSection' => $projectSection,
+        ]);
+    }
 }

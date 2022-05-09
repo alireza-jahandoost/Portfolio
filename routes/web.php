@@ -32,6 +32,9 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
             Route::get('dashboard', [DashboardController::class, 'show'])->name('dashboard');
             Route::resource('skills', SkillController::class);
             Route::resource('project_sections', ProjectSectionController::class);
+            Route::get('project_sections/{project_section}/projects', [ProjectSectionController::class, 'index_projects'])
+                ->name('project_sections.index_projects');
+
             Route::get('landing_page/edit', [LandingPageController::class, 'edit'])
                 ->name('landing_page.edit');
             Route::put('landing_page', [LandingPageController::class, 'update'])
