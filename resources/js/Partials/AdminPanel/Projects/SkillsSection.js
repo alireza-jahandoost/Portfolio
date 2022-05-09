@@ -15,7 +15,7 @@ const SkillsSection = ({ skills, project, ...props }) => {
                             There is not any skill for this project yet
                         </div>
                     ) : (
-                        <div className="flex">
+                        <div className="flex flex-wrap">
                             {project.skills.map((skill) => (
                                 <div
                                     key={skill.id}

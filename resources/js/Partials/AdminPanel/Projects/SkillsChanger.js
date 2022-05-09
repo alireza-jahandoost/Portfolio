@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Button from "@/Components/Flowbite/Button/Button";
 import OutlinedRedButton from "@/Components/Personalized/Button/OutlinedRedButton";
-import { useForm } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 const SkillsChanger = ({ skills, project, hideModal }) => {
+    const [isLoading, setIsLoading] = useState(false);
     const [currentSkills, setCurrentSkills] = useState(
         skills.map((skill) => ({
             ...skill,
@@ -12,7 +13,40 @@ const SkillsChanger = ({ skills, project, hideModal }) => {
         }))
     );
 
-    const handleSave = () => {};
+    const handleSave = () => {
+        Inertia.put(
+            route("admin.projects.update_skills", [project.id]),
+            {
+                removed_skills: project.skills
+                    .filter(
+                        (skill) =>
+                            currentSkills.findIndex(
+                                (sk) => !sk.selected && sk.id === skill.id
+                            ) !== -1
+                    )
+                    .map((skill) => skill.id),
+                new_skills: currentSkills
+                    .filter(
+                        (skill) =>
+                            skill.selected &&
+                            project.skills.findIndex(
+                                (sk) => sk.id === skill.id
+                            ) === -1
+                    )
+                    .map((skill) => skill.id),
+            },
+            {
+                onStart() {
+                    setIsLoading(true);
+                },
+                onFinish() {
+                    setIsLoading(false);
+                    hideModal();
+                },
+                preserveScroll: true,
+            }
+        );
+    };
 
     const handleCancel = () => {
         hideModal();
@@ -40,7 +74,6 @@ const SkillsChanger = ({ skills, project, hideModal }) => {
             );
         }
     };
-    console.log(currentSkills);
     return (
         <>
             <div
@@ -76,11 +109,13 @@ const SkillsChanger = ({ skills, project, hideModal }) => {
                             label="Save"
                             type="button"
                             onClick={handleSave}
+                            disabled={isLoading}
                         />
                         <OutlinedRedButton
                             className="bg-white"
                             type="button"
                             onClick={handleCancel}
+                            disabled={isLoading}
                         >
                             Cancel
                         </OutlinedRedButton>

@@ -176,14 +176,14 @@ class ProjectController extends Controller
         if($data['removed_skills']){
             foreach($data['removed_skills'] as $removedSkillId){
                 $removedSkill = Skill::find($removedSkillId);
-                $removedSkill->detach($project);
+                $removedSkill->projects()->detach($project);
             }
         }
 
         if($data['new_skills']){
             foreach($data['new_skills'] as $newSkillId){
                 $newSkill = Skill::find($newSkillId);
-                $newSkill->attach($project);
+                $newSkill->projects()->attach($project);
             }
         }
 
