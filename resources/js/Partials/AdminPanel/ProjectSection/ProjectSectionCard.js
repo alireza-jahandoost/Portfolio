@@ -8,7 +8,14 @@ const ProjectSectionCard = ({ projectSection, handleDelete }) => {
             <div className="flex flex-row-reverse">
                 <div className="flex-grow m-1">
                     <div>{projectSection.name}</div>
-                    <div>{projectSection.projects_count} Projects</div>
+                    <Link
+                        className="text-blue-600"
+                        href={route("admin.project_sections.index_projects", [
+                            projectSection.id,
+                        ])}
+                    >
+                        <div>{projectSection.projects_count} Projects</div>
+                    </Link>
                 </div>
             </div>
             <div className="flex justify-end gap-2">
