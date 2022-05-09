@@ -5,11 +5,19 @@ import { Link } from "@inertiajs/inertia-react";
 const ProjectCard = ({ project, handleDelete }) => {
     return (
         <Card withoutPadding={true}>
-            <img
-                className="rounded-t-lg w-full h-96 md:h-64"
-                src={`/${project.images[0].image_url}`}
-                alt={project.images[0].image_alt}
-            />
+            {project.images.length > 0 ? (
+                <img
+                    className="rounded-t-lg w-full h-96 md:h-64"
+                    src={`/${project.images[0].image_url}`}
+                    alt={project.images[0].image_alt}
+                />
+            ) : (
+                <div className="h-96 md:h-64 rounded-t-lg">
+                    <div className="flex justify-center items-center h-full bg-gray-300 rounded-t-lg">
+                        <div className="text-2xl">No Image Available</div>
+                    </div>
+                </div>
+            )}
             <div className="grid gap-2 p-2">
                 <h4>title: {project.title}</h4>
                 <div>
