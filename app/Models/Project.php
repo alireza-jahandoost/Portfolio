@@ -46,4 +46,14 @@ class Project extends Model
     {
         return $this->hasMany(ProjectImage::class);
     }
+
+    /**
+     * Relationship between project and its skills
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function skills(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 }

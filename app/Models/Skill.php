@@ -18,4 +18,14 @@ class Skill extends Model
     protected $casts = [
         'is_fluent' => 'boolean',
     ];
+
+    /**
+     * Relationship between skill and its projects
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function projects(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Project::class);
+    }
 }
