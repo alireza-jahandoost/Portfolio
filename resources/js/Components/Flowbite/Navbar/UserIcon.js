@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { usePopper } from "react-popper";
+import { Link } from "@inertiajs/inertia-react";
 
 const UserIcon = ({ auth }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -67,12 +68,12 @@ const UserIcon = ({ auth }) => {
                 </div>
                 <ul className="py-1" aria-labelledby="dropdown">
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            href={route("admin.dashboard")}
                             className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                             Dashboard
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <a
