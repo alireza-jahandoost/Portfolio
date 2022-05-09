@@ -1,15 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { usePopper } from "react-popper";
 
 const UserIcon = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [referenceElement, setReferenceElement] = useState(null);
+    const [popperElement, setPopperElement] = useState(null);
+    const [arrowElement, setArrowElement] = useState(null);
+    const { styles, attributes } = usePopper(referenceElement, popperElement, {
+        placement: "bottom-end",
+        modifiers: [
+            { name: "arrow", options: { element: arrowElement } },
+            {
+                name: "offset",
+                options: {
+                    offset: [0, 10],
+                },
+            },
+        ],
+    });
+
     return (
         <>
-            {" "}
+            <div
+                className={`${
+                    isOpen ? "block" : "hidden"
+                } bg-transparent fixed top-0 left-0 w-full h-full`}
+                onClick={() => setIsOpen(false)}
+            />
             <button
                 type="button"
                 className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 id="user-menu-button"
-                aria-expanded="false"
-                data-dropdown-toggle="dropdown"
+                onClick={() => setIsOpen((prevState) => !prevState)}
+                ref={setReferenceElement}
             >
                 <span className="sr-only">Open user menu</span>
                 <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
@@ -28,17 +51,11 @@ const UserIcon = () => {
                 </div>
             </button>
             <div
-                className="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-                id="dropdown"
-                style={{
-                    position: "absolute",
-                    inset: "auto auto 0px 0px",
-                    margin: "0px",
-                    transform: "translate(891px, 1094px)",
-                }}
-                data-popper-reference-hidden=""
-                data-popper-escaped=""
-                data-popper-placement="top"
+                className={`${
+                    isOpen ? "block" : "hidden"
+                } z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600`}
+                style={styles.popper}
+                ref={setPopperElement}
             >
                 <div className="py-3 px-4">
                     <span className="block text-sm text-gray-900 dark:text-white">
@@ -82,6 +99,7 @@ const UserIcon = () => {
                         </a>
                     </li>
                 </ul>
+                <div ref={setArrowElement} style={styles.arrow} />
             </div>
         </>
     );
