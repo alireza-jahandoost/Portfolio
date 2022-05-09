@@ -26,12 +26,12 @@ const EditProjectSection = (props) => {
             errors={props.errors}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Edit Project Section: {props.projectSection.name}
+                    Edit Project Section: "{props.projectSection.name}"
                 </h2>
             }
         >
             <Head
-                title={`Edit Project Section: ${props.projectSection.name}`}
+                title={`Edit Project Section: "${props.projectSection.name}"`}
             />
 
             <div className="p-4">

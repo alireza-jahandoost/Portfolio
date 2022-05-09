@@ -30,11 +30,11 @@ const EditSkill = (props) => {
             errors={props.errors}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Update Skill: {props.skill.name}
+                    Update Skill: "{props.skill.name}"
                 </h2>
             }
         >
-            <Head title={`Update Skill: ${props.skill.name}`} />
+            <Head title={`Update Skill: "${props.skill.name}"`} />
 
             <div className="p-4">
                 <form onSubmit={handleSubmit}>

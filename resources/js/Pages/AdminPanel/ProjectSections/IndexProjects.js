@@ -46,11 +46,11 @@ const IndexProjectSections = (props) => {
             errors={props.errors}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Index Projects of {props.projectSection.name}
+                    Index Projects of "{props.projectSection.name}"
                 </h2>
             }
         >
-            <Head title={`Index Projects of ${props.projectSection.name}`} />
+            <Head title={`Index Projects of "${props.projectSection.name}"`} />
 
             <div className="p-4">
                 <div className="grid text-center border rounded divide-y">
