@@ -34,12 +34,17 @@ const IndexProjectSections = (props) => {
                                 <ControlButton
                                     title="Move down"
                                     onClick={() => {}}
+                                    disabled={
+                                        props.projectSection.projects.length ===
+                                        idx + 1
+                                    }
                                 >
                                     <i className="fa-solid fa-arrow-down fa-xl" />
                                 </ControlButton>
                                 <ControlButton
                                     title="Move up"
                                     onClick={() => {}}
+                                    disabled={idx === 0}
                                 >
                                     <i className="fa-solid fa-arrow-up fa-xl" />
                                 </ControlButton>
