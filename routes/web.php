@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\CommunicationWayController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HonorController;
@@ -71,5 +72,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
 
             Route::get('settings', [SettingsController::class, 'show'])
                 ->name('settings');
+
+            Route::post('change_password', [ChangePasswordController::class, 'store'])
+                ->name('change_password.store');
         }
     );
