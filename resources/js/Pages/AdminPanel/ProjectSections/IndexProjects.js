@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
-import { Head } from "@inertiajs/inertia-react";
+import { Head, Link } from "@inertiajs/inertia-react";
 import ControlButton from "@/Components/Personalized/Button/ControlButton";
 import { Inertia } from "@inertiajs/inertia";
 
@@ -65,7 +65,14 @@ const IndexProjectSections = (props) => {
                             }`}
                             key={project.id}
                         >
-                            <div>{project.title}</div>
+                            <Link
+                                href={route("admin.projects.edit", [
+                                    project.id,
+                                ])}
+                                className="text-blue-600"
+                            >
+                                <div>{project.title}</div>
+                            </Link>
                             <div className="flex gap-2 justify-center">
                                 <ControlButton
                                     title="Move down"
