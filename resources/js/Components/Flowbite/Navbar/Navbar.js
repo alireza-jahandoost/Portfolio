@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@inertiajs/inertia-react";
 import UserIcon from "@/Components/Flowbite/Navbar/UserIcon";
 
-const Navbar = ({ links }) => {
+const Navbar = ({ links, auth }) => {
     return (
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -15,7 +15,7 @@ const Navbar = ({ links }) => {
                     </span>
                 </Link>
                 <div className="flex items-center md:order-2">
-                    <UserIcon />
+                    <UserIcon auth={auth} />
                     <button
                         data-collapse-toggle="mobile-menu-2"
                         type="button"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { usePopper } from "react-popper";
 
-const UserIcon = () => {
+const UserIcon = ({ auth }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [referenceElement, setReferenceElement] = useState(null);
     const [popperElement, setPopperElement] = useState(null);
@@ -59,10 +59,10 @@ const UserIcon = () => {
             >
                 <div className="py-3 px-4">
                     <span className="block text-sm text-gray-900 dark:text-white">
-                        Bonnie Green
+                        {auth.user.name}
                     </span>
                     <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
-                        name@flowbite.com
+                        {auth.user.email}
                     </span>
                 </div>
                 <ul className="py-1" aria-labelledby="dropdown">
