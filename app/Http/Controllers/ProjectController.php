@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Http\Requests\UpdateProjectSkillsRequest;
 use App\Models\Project;
 use App\Models\ProjectImage;
 use App\Models\ProjectSection;
@@ -165,6 +166,26 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
+
+        return back();
+    }
+
+    public function update_skills(UpdateProjectSkillsRequest $request, Project $project){
+        $data = $request->validated();
+
+        if($data['removed_skills']){
+            foreach($data['removed_skills'] as $removedSkillId){
+                $removedSkill = Skill::find($removedSkillId);
+                $removedSkill->detach($project);
+            }
+        }
+
+        if($data['new_skills']){
+            foreach($data['new_skills'] as $newSkillId){
+                $newSkill = Skill::find($newSkillId);
+                $newSkill->attach($project);
+            }
+        }
 
         return back();
     }

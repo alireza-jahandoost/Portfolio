@@ -69,6 +69,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('work_experiences.update');
 
             Route::resource('projects', ProjectController::class);
+            Route::put('projects/{project}/update_skills', [ProjectController::class, 'update_skills'])
+                ->name('projects.update_skills');
 
             Route::get('settings', [SettingsController::class, 'show'])
                 ->name('settings');
