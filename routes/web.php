@@ -6,6 +6,7 @@ use App\Http\Controllers\HonorController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectSectionController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkExperienceController;
@@ -67,5 +68,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('work_experiences.update');
 
             Route::resource('projects', ProjectController::class);
+
+            Route::get('settings', [SettingsController::class, 'show'])
+                ->name('settings');
         }
     );
