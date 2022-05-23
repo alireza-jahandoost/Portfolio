@@ -13,11 +13,17 @@
 
     <link href="/css/app.css" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Nunito', sans-serif;
         }
     </style>
 </head>
@@ -25,7 +31,7 @@
 <div class="grid gap-y-8 mb-20 md:mb-0">
     @include('partials.general.navbar')
     <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12">
-        <div class="w-full h-[32rem] md:h-[28rem] bg-black md:rounded-3xl"></div>
+        @include('partials.landing.header')
         <div class="w-full bg-black flex flex-col md:gap-4 p-4 md:px-12 lg:px-20 md:flex-row items-center">
             <div class="w-52 h-52 rounded-full md:rounded-xl md:w-72 md:h-72 bg-gray-500 md:order-1"></div>
             <div class="bg-gray-500 h-52 md:h-72 mt-4 md:mt-0 self-stretch grow"></div>
