@@ -79,3 +79,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('change_password.store');
         }
     );
+
+Route::name('main')->group(function(){
+   Route::view('/', 'landing');
+});
