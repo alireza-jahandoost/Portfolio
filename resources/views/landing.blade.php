@@ -13,6 +13,8 @@
 
     <link href="/css/app.css" rel="stylesheet"/>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         body {
             font-family: 'Nunito', sans-serif;
@@ -21,14 +23,7 @@
 </head>
 <body class="antialiased">
 <div class="grid gap-y-8 mb-20 md:mb-0">
-    <div class="h-20 bg-black w-full hidden md:block">
-        <div class="max-w-screen-2xl mx-auto px-4">
-        </div>
-    </div>
-    <div class="h-20 bg-gray-300 w-full md:hidden fixed bottom-0">
-        <div class="max-w-screen-2xl mx-auto px-4">
-        </div>
-    </div>
+    @include('partials.general.navbar')
     <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12">
         <div class="w-full h-[32rem] md:h-[28rem] bg-black md:rounded-3xl"></div>
         <div class="w-full bg-black flex flex-col md:gap-4 p-4 md:px-12 lg:px-20 md:flex-row items-center">
