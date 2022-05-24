@@ -2568,6 +2568,14 @@ input[type="range"]::-ms-fill-lower {
     gap: 2rem;
   }
 
+  .md\:gap-y-12 {
+    row-gap: 3rem;
+  }
+
+  .md\:gap-y-16 {
+    row-gap: 4rem;
+  }
+
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -2702,6 +2710,14 @@ input[type="range"]::-ms-fill-lower {
 
   .lg\:gap-12 {
     gap: 3rem;
+  }
+
+  .lg\:gap-y-32 {
+    row-gap: 8rem;
+  }
+
+  .lg\:gap-y-20 {
+    row-gap: 5rem;
   }
 
   .lg\:px-8 {
