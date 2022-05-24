@@ -34,24 +34,7 @@
         @include('partials.landing.header')
         @include('partials.landing.aboutMe')
         @include('partials.landing.skills')
-        <div class="w-full bg-black grid lg:grid-cols-2 md:px-24 lg:px-0 gap-2">
-            <div class="bg-gray-500 p-2 grid sm:grid-cols-2 gap-2 pt-8">
-                <div class="bg-black h-80 rounded-lg"></div>
-                <div class="bg-black h-80 rounded-lg"></div>
-            </div>
-            <div class="bg-gray-500 p-2 grid sm:grid-cols-2 gap-2 pt-8">
-                <div class="bg-black h-80 rounded-lg"></div>
-                <div class="bg-black h-80 rounded-lg"></div>
-            </div>
-            <div class="bg-gray-500 p-2 grid sm:grid-cols-2 gap-2 pt-8">
-                <div class="bg-black h-80 rounded-lg"></div>
-                <div class="bg-black h-80 rounded-lg"></div>
-            </div>
-            <div class="bg-gray-500 p-2 grid sm:grid-cols-2 gap-2 pt-8">
-                <div class="bg-black h-80 rounded-lg"></div>
-                <div class="bg-black h-80 rounded-lg"></div>
-            </div>
-        </div>
+        @include('partials.landing.projectSections')
         <div class="w-full bg-black flex flex-col py-4">
             <div class="h-52"></div>
             <div class="flex justify-center">
