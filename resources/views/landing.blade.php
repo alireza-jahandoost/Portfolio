@@ -33,6 +33,7 @@
     <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12">
         @include('partials.landing.header')
         @include('partials.landing.aboutMe')
+        @include('partials.landing.skills')
         <div class="w-full bg-black grid lg:grid-cols-2 md:px-24 lg:px-0 gap-2">
             <div class="bg-gray-500 p-2 grid sm:grid-cols-2 gap-2 pt-8">
                 <div class="bg-black h-80 rounded-lg"></div>
