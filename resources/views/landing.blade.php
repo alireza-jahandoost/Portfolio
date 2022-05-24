@@ -32,10 +32,7 @@
     @include('partials.general.navbar')
     <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12">
         @include('partials.landing.header')
-        <div class="w-full bg-black flex flex-col md:gap-4 p-4 md:px-12 lg:px-20 md:flex-row items-center">
-            <div class="w-52 h-52 rounded-full md:rounded-xl md:w-72 md:h-72 bg-gray-500 md:order-1"></div>
-            <div class="bg-gray-500 h-52 md:h-72 mt-4 md:mt-0 self-stretch grow"></div>
-        </div>
+        @include('partials.landing.aboutMe')
         <div class="w-full bg-black grid lg:grid-cols-2 md:px-24 lg:px-0 gap-2">
             <div class="bg-gray-500 p-2 grid sm:grid-cols-2 gap-2 pt-8">
                 <div class="bg-black h-80 rounded-lg"></div>
