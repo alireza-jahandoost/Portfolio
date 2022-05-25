@@ -28,26 +28,15 @@
     </style>
 </head>
 <body class="antialiased">
-<div class="grid gap-y-8 mb-20 md:mb-0">
+<div class="grid gap-y-8">
     @include('partials.general.navbar')
     <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12 md:gap-y-16 lg:gap-y-20">
         @include('partials.landing.header')
         @include('partials.landing.aboutMe')
         @include('partials.landing.skills')
         @include('partials.landing.projectSections')
-        <div class="w-full bg-black flex flex-col py-4">
-            <div class="h-52"></div>
-            <div class="flex justify-center">
-                <div class="grow flex justify-around max-w-lg">
-                    <div class="w-12 h-12 rounded-full bg-gray-500"></div>
-                    <div class="w-12 h-12 rounded-full bg-gray-500"></div>
-                    <div class="w-12 h-12 rounded-full bg-gray-500"></div>
-                    <div class="w-12 h-12 rounded-full bg-gray-500"></div>
-                </div>
-            </div>
-        </div>
     </div>
-
+    @include('partials.landing.contactUs')
 </div>
 </body>
 </html>
