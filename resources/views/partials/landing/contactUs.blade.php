@@ -7,18 +7,13 @@
     </div>
     <div class="flex justify-center">
         <div class="grow flex justify-around max-w-lg">
-            <div class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
-                <i class="fa-brands fa-twitter fa-xl"></i>
-            </div>
-            <div class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
-                <i class="fa-brands fa-linkedin fa-xl"></i>
-            </div>
-            <div class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
-                <i class="fa-brands fa-instagram fa-xl"></i>
-            </div>
-            <div class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
-                <i class="fa-brands fa-google-plus fa-xl"></i>
-            </div>
+            @foreach($communicationWays as $communicationWay)
+                <a href="{{$communicationWay->value}}">
+                    <div class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
+                        <i class="{{$communicationWay->icon_class}} fa-xl"></i>
+                    </div>
+                </a>
+                @endforeach
         </div>
     </div>
 </div>
