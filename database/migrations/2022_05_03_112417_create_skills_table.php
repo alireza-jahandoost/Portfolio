@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->boolean('is_fluent');
-            $table->string('icon_class');
+            $table->string('icon_class')->nullable();
             $table->timestamps();
         });
     }
