@@ -26,6 +26,7 @@ class UserController extends Controller
         auth()->user()->name = $data['name'];
         auth()->user()->email = $data['email'];
         auth()->user()->about_me = $data['about_me'];
+        auth()->user()->about_me_title = $data['about_me_title'];
 
         if(isset($data['image'])){
             auth()->user()->image = $request->file('image')->store('profileImages');

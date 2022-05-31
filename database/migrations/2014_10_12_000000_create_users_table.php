@@ -22,7 +22,8 @@ return new class extends Migration
             $table->boolean('is_admin')->default(false);
             $table->string('image')->nullable();
             $table->string('password');
-            $table->text('about_me');
+            $table->text('about_me')->nullable();
+            $table->text('about_me_title')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,7 +33,6 @@ return new class extends Migration
         $admin->email = config('admin.email');
         $admin->is_admin = true;
         $admin->password = bcrypt('password');
-        $admin->about_me = 'About Me';
         $admin->save();
     }
 

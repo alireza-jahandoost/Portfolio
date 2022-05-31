@@ -15,6 +15,7 @@ const EditUserInformation = (props) => {
         email: props.auth.user.email,
         image: null,
         about_me: props.auth.user.about_me,
+        about_me_title: props.auth.user.about_me_title,
     });
 
     const handleChange = (event) => {
@@ -122,6 +123,15 @@ const EditUserInformation = (props) => {
                             value={data.about_me}
                             label="About Me"
                             name="about_me"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <Textarea
+                            id="about_me_title"
+                            value={data.about_me_title}
+                            label="Title of About Me"
+                            name="about_me_title"
                             onChange={handleChange}
                         />
                     </div>
