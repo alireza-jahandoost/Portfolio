@@ -5,6 +5,7 @@ use App\Http\Controllers\CommunicationWayController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HonorController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\MainPagesController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectSectionController;
 use App\Http\Controllers\SettingsController;
@@ -80,6 +81,7 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
         }
     );
 
-Route::name('main')->group(function(){
-   Route::view('/', 'landing');
+Route::name('main.')->group(function () {
+    Route::get('/', [MainPagesController::class, 'landingPage'])
+        ->name('landing_page');
 });
