@@ -38,7 +38,7 @@ const EditLandingPage = (props) => {
             <div className="p-4">
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <TextInput
+                        <Textarea
                             name="title"
                             value={data.title}
                             onChange={handleChange}
