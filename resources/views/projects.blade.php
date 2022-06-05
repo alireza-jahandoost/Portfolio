@@ -39,6 +39,7 @@
     @include('partials.general.navbar')
     <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12 md:gap-y-16 lg:gap-y-20">
         @include('partials.projects.header')
+        @include('partials.projects.projects')
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
