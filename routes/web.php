@@ -84,4 +84,6 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
 Route::name('main.')->group(function () {
     Route::get('/', [MainPagesController::class, 'landingPage'])
         ->name('landing_page');
+    Route::get('/projects', [MainPagesController::class, 'projects'])
+        ->name('projects');
 });
