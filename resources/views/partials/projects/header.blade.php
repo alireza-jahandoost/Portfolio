@@ -6,7 +6,8 @@
         <div class="grid gap-2 md:grid-cols-2">
 
             <div class="grid gap-1">
-                <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+                <label for="search"
+                       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
                 <div class="relative">
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                         <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
@@ -24,10 +25,9 @@
                 <label class="sr-only" for="projectSectionSelector">Project Section</label>
                 <select id="projectSectionSelector" name="project_section">
                     <option value="" selected disabled>Choose A project section</option>
-                    <option value="first">First</option>
-                    <option value="second">Second</option>
-                    <option value="third">Third</option>
-                    <option value="fourth">Fourth</option>
+                    @foreach($projectSections as $projectSection)
+                        <option value="{{$projectSection->id}}">{{$projectSection->name}}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -38,6 +38,9 @@
                     <option value="second">CSS</option>
                     <option value="third">PHP</option>
                     <option value="fourth">JavaScript</option>
+                    @foreach($skills as $skill)
+                        <option value="{{$skill->id}}">{{$skill->name}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

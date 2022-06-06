@@ -8,11 +8,11 @@ use App\Models\Project;
 use App\Models\ProjectSection;
 use App\Models\Skill;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class MainPagesController extends Controller
 {
-    public function landingPage(){
+    public function landingPage()
+    {
         return view('landing', [
             'landingPage' => LandingPage::first(),
             'user' => User::first(),
@@ -22,9 +22,12 @@ class MainPagesController extends Controller
         ]);
     }
 
-    public function projects(){
+    public function projects()
+    {
         return view('projects', [
             'projects' => Project::all(),
+            'skills' => Skill::all(),
+            'projectSections' => ProjectSection::all(),
         ]);
     }
 }
