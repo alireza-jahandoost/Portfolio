@@ -2387,6 +2387,10 @@ input[type="range"]::-ms-fill-lower {
   --tw-text-opacity: 1;
   color: rgb(248 180 180 / var(--tw-text-opacity));
 }
+.dark .dark\:text-red-100 {
+  --tw-text-opacity: 1;
+  color: rgb(253 232 232 / var(--tw-text-opacity));
+}
 .dark .dark\:placeholder-gray-400::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(156 163 175 / var(--tw-placeholder-opacity));
