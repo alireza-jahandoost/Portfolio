@@ -13,6 +13,7 @@ const FloatingOutlinedInput = ({
     helperClassName = "",
     error = "",
     focused = false,
+    required = false,
 }) => {
     return (
         <>
@@ -29,6 +30,7 @@ const FloatingOutlinedInput = ({
                     value={value}
                     onChange={onChange}
                     autoFocus={focused}
+                    required={required}
                 />
                 <label
                     htmlFor={id}

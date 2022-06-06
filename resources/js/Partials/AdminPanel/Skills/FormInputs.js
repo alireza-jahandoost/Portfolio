@@ -7,6 +7,7 @@ const FormInputs = ({ data, handleChange, errors }) => {
             <div>
                 <FloatingOutlinedInput
                     focused={true}
+                    required={true}
                     name="name"
                     value={data.name}
                     onChange={handleChange}
