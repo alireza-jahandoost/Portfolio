@@ -15,6 +15,7 @@ const FormInputs = ({ data, projectSections, handleChange, errors }) => {
                         id="title"
                         label="Project Title"
                         placeholder="Title of the project"
+                        error={errors.title}
                     />
                 </div>
                 <div>
@@ -24,6 +25,7 @@ const FormInputs = ({ data, projectSections, handleChange, errors }) => {
                         onChange={handleChange}
                         label="Project Section"
                         name="project_section_id"
+                        error={errors.project_section_id}
                     >
                         <option value="0">choose a project section</option>
                         {projectSections.map((projectSection) => (
@@ -44,6 +46,7 @@ const FormInputs = ({ data, projectSections, handleChange, errors }) => {
                     onChange={handleChange}
                     id="description"
                     label="Project Description"
+                    error={errors.description}
                 />
             </div>
             <div className="grid md:grid-cols-2 gap-2">
@@ -55,6 +58,7 @@ const FormInputs = ({ data, projectSections, handleChange, errors }) => {
                         id="link_to_github"
                         label="Project Link to Github"
                         placeholder="Link of the project in github"
+                        error={errors.link_to_github}
                     />
                 </div>
                 <div>
@@ -65,6 +69,7 @@ const FormInputs = ({ data, projectSections, handleChange, errors }) => {
                         id="link_to_production"
                         label="Project Link to Production"
                         placeholder="Link of the project in production"
+                        error={errors.link_to_production}
                     />
                 </div>
             </div>
