@@ -46,6 +46,7 @@ const EditLandingPage = (props) => {
                             required={true}
                             label="Title"
                             placeholder="Title of landing page"
+                            error={errors.title}
                         />
                     </div>
                     <div className="mt-5">
@@ -55,6 +56,7 @@ const EditLandingPage = (props) => {
                             label="Description"
                             name="description"
                             onChange={handleChange}
+                            error={errors.description}
                         />
                     </div>
                     <Button
