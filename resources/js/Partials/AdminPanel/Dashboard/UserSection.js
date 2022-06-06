@@ -29,10 +29,6 @@ const UserSection = ({ auth }) => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <span>About me: </span>
-                    <span>{auth.user.about_me}</span>
-                </div>
             </div>
             <div className="flex justify-end">
                 <EditLink href={route("admin.user_profile.edit")} />
