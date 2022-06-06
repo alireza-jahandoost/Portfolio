@@ -13,9 +13,6 @@ const SkillCard = ({ skill, handleDelete }) => {
                             <div>{skill.name}</div>
                             <div>{skill.is_fluent ? "Fluent" : "Familiar"}</div>
                         </div>
-                        <div className="mb-auto">
-                            <i className={`${skill.icon_class} fa-2xl`} />
-                        </div>
                     </div>
                 </div>
                 <div className="flex gap-2 justify-end">

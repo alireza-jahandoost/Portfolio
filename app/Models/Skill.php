@@ -12,7 +12,6 @@ class Skill extends Model
     protected $fillable = [
         'is_fluent',
         'name',
-        'icon_class',
     ];
 
     protected $casts = [

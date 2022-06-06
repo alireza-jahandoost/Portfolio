@@ -11,7 +11,6 @@ const EditSkill = (props) => {
     const { put, data, setData, errors, reset } = useForm({
         name: props.skill.name,
         is_fluent: props.skill.is_fluent,
-        icon_class: props.skill.icon_class,
     });
 
     const handleChange = (event) => {

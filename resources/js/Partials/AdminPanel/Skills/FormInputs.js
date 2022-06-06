@@ -15,29 +15,6 @@ const FormInputs = ({ data, handleChange, errors }) => {
                 />
             </div>
             <div>
-                <FloatingOutlinedInput
-                    name="icon_class"
-                    value={data.icon_class}
-                    onChange={handleChange}
-                    id="icon_class"
-                    label="Skill's icon class"
-                    error={errors.icon_class}
-                    helper={
-                        <>
-                            You can find you icon from{" "}
-                            <a
-                                href="https://fontawesome.com/search?s=solid%2Cbrands"
-                                target="_blank"
-                                className="text-blue-600 italic text-sm"
-                            >
-                                this
-                            </a>{" "}
-                            link
-                        </>
-                    }
-                />
-            </div>
-            <div>
                 <Toggle
                     onChange={handleChange}
                     id="is_fluent"
