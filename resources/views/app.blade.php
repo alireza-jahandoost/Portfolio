@@ -20,7 +20,7 @@
     @routes
     <script src="{{ mix('js/app.js') }}" defer></script>
 
-    {{$headerSlot ?? ""}}}
+    {{$headerSlot ?? ""}}
 </head>
 <body class="font-sans antialiased">
 @inertia
@@ -29,6 +29,6 @@
     <script src="http://localhost:8080/js/bundle.js"></script>
 @endenv
 
-{{$scriptSlot ?? ""}}}
+{{$scriptSlot ?? ""}}
 </body>
 </html>
