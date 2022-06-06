@@ -41,7 +41,7 @@ const EditUserInformation = (props) => {
             },
             {
                 onError(err) {
-                    console.log(err);
+                    setError(err);
                 },
                 onSuccess() {
                     setData("image", null);
@@ -76,6 +76,7 @@ const EditUserInformation = (props) => {
                                     required={true}
                                     label="Name"
                                     placeholder="User's Full Name"
+                                    error={errors.name}
                                 />
                             </div>
                             <div>
@@ -88,6 +89,7 @@ const EditUserInformation = (props) => {
                                     required={true}
                                     label="Email"
                                     placeholder="User's Email"
+                                    error={errors.email}
                                 />
                             </div>
                         </div>
@@ -113,6 +115,7 @@ const EditUserInformation = (props) => {
                                     label="User Image"
                                     name="image"
                                     id="user_image"
+                                    error={errors.user_image}
                                 />
                             )}
                         </div>
@@ -124,6 +127,7 @@ const EditUserInformation = (props) => {
                             label="About Me"
                             name="about_me"
                             onChange={handleChange}
+                            error={errors.about_me}
                         />
                     </div>
                     <div>
@@ -133,6 +137,7 @@ const EditUserInformation = (props) => {
                             label="Title of About Me"
                             name="about_me_title"
                             onChange={handleChange}
+                            error={errors.about_me_title}
                         />
                     </div>
                     <div>
@@ -142,6 +147,7 @@ const EditUserInformation = (props) => {
                             label="Contact Me"
                             name="contact_me"
                             onChange={handleChange}
+                            error={errors.contact_me}
                         />
                     </div>
                     <Button
