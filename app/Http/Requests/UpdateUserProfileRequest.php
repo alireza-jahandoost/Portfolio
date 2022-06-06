@@ -27,6 +27,7 @@ class UpdateUserProfileRequest extends FormRequest
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:80',
             'about_me' => 'required|string|max:2000',
+            'contact_me' => 'required|string|max:1000',
             'about_me_title' => 'required|string|max:1000',
             'image' => 'nullable|image|max:2000',
         ];

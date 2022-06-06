@@ -1,8 +1,8 @@
 <div class="w-full bg-gradient-to-b from-white to-black/30 flex flex-col py-4 mt-8">
     <div class="h-52 flex flex-col items-center">
         <h4 class="text-2xl underline font-bold">Contact Me</h4>
-        <div class="text-md mt-4 p-2 text-center max-w-2xl text-gray-800">contact me text. contact me text. contact me text. contact me text. contact me text. contact me text.
-            contact me text. contact me text. contact me text. contact me text. contact me text. contact me text. contact me text. contact me text.
+        <div class="text-md mt-4 p-2 text-center max-w-2xl text-gray-800">
+            {{$user->contact_me}}
         </div>
     </div>
     <div class="flex justify-center">

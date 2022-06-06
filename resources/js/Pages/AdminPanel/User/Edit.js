@@ -3,7 +3,6 @@ import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
 import Button from "@/Components/Flowbite/Button/Button";
-import FormInputs from "@/Partials/AdminPanel/ProjectSection/FormInputs";
 import TextInput from "@/Components/Flowbite/Input/TextInput";
 import Textarea from "@/Components/Flowbite/Textarea/Textarea";
 import FileInput from "@/Components/Flowbite/FileInput/FileInput";
@@ -15,6 +14,7 @@ const EditUserInformation = (props) => {
         email: props.auth.user.email,
         image: null,
         about_me: props.auth.user.about_me,
+        contact_me: props.auth.user.contact_me,
         about_me_title: props.auth.user.about_me_title,
     });
 
@@ -132,6 +132,15 @@ const EditUserInformation = (props) => {
                             value={data.about_me_title}
                             label="Title of About Me"
                             name="about_me_title"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <Textarea
+                            id="contact_me"
+                            value={data.contact_me}
+                            label="Contact Me"
+                            name="contact_me"
                             onChange={handleChange}
                         />
                     </div>
