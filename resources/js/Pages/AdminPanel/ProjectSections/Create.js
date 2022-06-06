@@ -22,6 +22,7 @@ const CreateProjectSection = (props) => {
             onSuccess() {
                 reset();
             },
+            preserveState: false,
         });
     };
 
