@@ -120,7 +120,7 @@ const EditUserInformation = (props) => {
                     <div>
                         <Textarea
                             id="about_me"
-                            value={data.about_me}
+                            value={data.about_me ?? ""}
                             label="About Me"
                             name="about_me"
                             onChange={handleChange}
@@ -129,7 +129,7 @@ const EditUserInformation = (props) => {
                     <div>
                         <Textarea
                             id="about_me_title"
-                            value={data.about_me_title}
+                            value={data.about_me_title ?? ""}
                             label="Title of About Me"
                             name="about_me_title"
                             onChange={handleChange}
@@ -138,7 +138,7 @@ const EditUserInformation = (props) => {
                     <div>
                         <Textarea
                             id="contact_me"
-                            value={data.contact_me}
+                            value={data.contact_me ?? ""}
                             label="Contact Me"
                             name="contact_me"
                             onChange={handleChange}
