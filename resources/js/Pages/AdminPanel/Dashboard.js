@@ -22,7 +22,7 @@ export default function Dashboard(props) {
         >
             <Head title="Dashboard" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1 p-1 grid-flow-row-dense">
+            <div className="grid bg-gray-100 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1 p-1 grid-flow-row-dense">
                 <Card className="md:col-span-2 md:-order-2">
                     <UserSection auth={props.auth} />
                 </Card>
