@@ -81,6 +81,8 @@ class CommunicationWayController extends Controller
             CommunicationWay::create($communicationWay);
         }
 
+        session()->flash('message', 'Communication ways updated successfully');
+
         return back();
     }
 

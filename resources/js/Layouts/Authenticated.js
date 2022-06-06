@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/Components/Flowbite/Navbar/Navbar";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Authenticated({ auth, header, children }) {
+    useEffect(() => {
+        if (auth.message.value) {
+            toast(auth.message.value);
+        }
+    }, [auth.message]);
+
     const adminLinks = [
         {
             name: "Dashboard",
@@ -27,6 +35,7 @@ export default function Authenticated({ auth, header, children }) {
 
     return (
         <div className="min-h-screen bg-gray-100">
+            <ToastContainer />
             <Navbar links={adminLinks} auth={auth} />
 
             {header && (

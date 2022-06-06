@@ -45,6 +45,8 @@ class SkillController extends Controller
 
         auth()->user()->skills()->create($data);
 
+        session()->flash('message', 'Skill has been created successfully');
+
         return back();
     }
 
@@ -85,6 +87,8 @@ class SkillController extends Controller
 
         $skill->update($data);
 
+        session()->flash('message', 'Skill has been updated successfully');
+
         return back();
     }
 
@@ -97,6 +101,8 @@ class SkillController extends Controller
     public function destroy(Skill $skill)
     {
         $skill->delete();
+
+        session()->flash('message', 'Skill has been deleted successfully');
 
         return back();
     }

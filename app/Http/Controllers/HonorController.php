@@ -81,6 +81,8 @@ class HonorController extends Controller
             Honor::create($honor);
         }
 
+        session()->flash('message', 'Honors have been updated successfully');
+
         return back();
     }
 

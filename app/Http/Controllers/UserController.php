@@ -35,6 +35,8 @@ class UserController extends Controller
 
         auth()->user()->save();
 
+        session()->flash('message', 'User Information has been updated successfully');
+
         return back();
     }
 
@@ -50,6 +52,8 @@ class UserController extends Controller
         auth()->user()->save();
 
         auth()->user()->save();
+
+        session()->flash('message', 'User image has been deleted successfully');
 
         return back();
     }

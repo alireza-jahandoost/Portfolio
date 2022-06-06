@@ -58,6 +58,8 @@ class ProjectController extends Controller
 
         $this->createImages($project, $data['images']);
 
+        session()->flash('message', 'Project has been created successfully');
+
         return back();
     }
 
@@ -154,6 +156,8 @@ class ProjectController extends Controller
             }
         }
 
+        session()->flash('message', 'Project has been updated successfully');
+
         return back();
     }
 
@@ -166,6 +170,8 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
+
+        session()->flash('message', 'Project has been deleted successfully');
 
         return back();
     }
@@ -186,6 +192,8 @@ class ProjectController extends Controller
                 $newSkill->projects()->attach($project);
             }
         }
+
+        session()->flash('message', 'skills of the project has been updated successfully');
 
         return back();
     }

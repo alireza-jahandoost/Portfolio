@@ -81,6 +81,8 @@ class LandingPageController extends Controller
 
         $landingPage->save();
 
+        session()->flash('message', 'Landing page information has been updated successfully');
+
         return back();
     }
 

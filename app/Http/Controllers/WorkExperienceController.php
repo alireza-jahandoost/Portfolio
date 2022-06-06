@@ -87,6 +87,8 @@ class WorkExperienceController extends Controller
             WorkExperience::create($workExperience);
         }
 
+        session()->flash('message', 'Work experiences have been updated successfully');
+
         return back();
     }
 
