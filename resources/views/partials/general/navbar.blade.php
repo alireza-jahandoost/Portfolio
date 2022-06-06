@@ -13,3 +13,26 @@
         </div>
     </div>
 </nav>
+
+<nav class="md:hidden fixed bottom-0 w-full">
+    <div class="px-4 md:hidden bg-white shadow-[0_0_10px]">
+        <div class="flex justify-around text-gray-700 pb-2 pt-4 px-2">
+            <div class="hover:text-gray-800">
+                <a href="{{route('main.landing_page')}}">
+                    <div class="flex flex-col">
+                        <i class="fa-solid fa-home text-center text-2xl"></i>
+                        <span class="text-xs pt-1">Home</span>
+                    </div>
+                </a>
+            </div>
+            <div class="hover:text-gray-800">
+                <a href="{{route('main.projects')}}">
+                    <div class="flex flex-col">
+                        <i class="fa-solid fa-globe text-center text-2xl"></i>
+                        <span class="text-xs pt-1">Projects</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
