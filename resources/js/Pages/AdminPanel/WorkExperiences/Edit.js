@@ -13,6 +13,8 @@ const EditWorkExperiences = (props) => {
         ),
     });
 
+    console.log(errors);
+
     const addWorkExperience = () => {
         const id = (() => {
             while (true) {
@@ -89,7 +91,8 @@ const EditWorkExperiences = (props) => {
                 />
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-8">
-                        {data.work_experiences.map((workExperience) => {
+                        {data.work_experiences.map((workExperience, idx) => {
+                            const errorPrefix = `work_experiences.${idx}`;
                             return (
                                 <div
                                     key={workExperience.id}
@@ -120,6 +123,11 @@ const EditWorkExperiences = (props) => {
                                                     id={`workExperience-${workExperience.id}-start`}
                                                     required={true}
                                                     label="WorkExperience Start Date"
+                                                    error={
+                                                        errors[
+                                                            `${errorPrefix}.start`
+                                                        ]
+                                                    }
                                                 />
                                             </div>
                                             <div>
@@ -139,6 +147,11 @@ const EditWorkExperiences = (props) => {
                                                     }
                                                     label="WorkExperience End Date"
                                                     placeholder="End Date of WorkExperience"
+                                                    error={
+                                                        errors[
+                                                            `${errorPrefix}.end`
+                                                        ]
+                                                    }
                                                 />
                                             </div>
                                         </div>
@@ -175,6 +188,11 @@ const EditWorkExperiences = (props) => {
                                                 required={true}
                                                 name="company_name"
                                                 placeholder="Name of the company"
+                                                error={
+                                                    errors[
+                                                        `${errorPrefix}.company_name`
+                                                    ]
+                                                }
                                             />
                                         </div>
                                         <div>
@@ -192,6 +210,11 @@ const EditWorkExperiences = (props) => {
                                                 required={true}
                                                 name="role"
                                                 placeholder="Role in the company"
+                                                error={
+                                                    errors[
+                                                        `${errorPrefix}.role`
+                                                    ]
+                                                }
                                             />
                                         </div>
                                     </div>
