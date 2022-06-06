@@ -1,7 +1,7 @@
 import React from "react";
 
 const ValidationError = ({ children }) => {
-    return <p class="text-red-600 text-sm">{children}</p>;
+    return <p className="text-red-600 text-xs italic">{children}</p>;
 };
 
 export default ValidationError;
