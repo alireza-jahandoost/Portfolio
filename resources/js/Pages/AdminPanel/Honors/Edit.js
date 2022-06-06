@@ -76,7 +76,8 @@ const EditHonors = (props) => {
                 />
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-8">
-                        {data.honors.map((honor) => {
+                        {data.honors.map((honor, idx) => {
+                            const errorPrefix = `honors.${idx}`;
                             return (
                                 <div key={honor.id} className="grid gap-2">
                                     <div className="flex gap-2">
@@ -105,6 +106,11 @@ const EditHonors = (props) => {
                                                     required={true}
                                                     label="Honor Date"
                                                     placeholder="Date of Honor"
+                                                    error={
+                                                        errors[
+                                                            `${errorPrefix}.date`
+                                                        ]
+                                                    }
                                                 />
                                             </div>
                                             <div>
@@ -122,6 +128,11 @@ const EditHonors = (props) => {
                                                     required={true}
                                                     label="Honor Title"
                                                     placeholder="Title of Honor"
+                                                    error={
+                                                        errors[
+                                                            `${errorPrefix}.title`
+                                                        ]
+                                                    }
                                                 />
                                             </div>
                                         </div>
@@ -136,6 +147,11 @@ const EditHonors = (props) => {
                                             id={`honor-${honor.id}-description`}
                                             name="description"
                                             rowsNumber={2}
+                                            error={
+                                                errors[
+                                                    `${errorPrefix}.description`
+                                                ]
+                                            }
                                         />
                                     </div>
                                 </div>
