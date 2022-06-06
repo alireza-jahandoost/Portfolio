@@ -23,6 +23,7 @@ const CreateSkill = (props) => {
             onSuccess() {
                 reset();
             },
+            preserveState: false,
         });
     };
 

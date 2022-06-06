@@ -6,6 +6,7 @@ const FormInputs = ({ data, handleChange, errors }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
                 <FloatingOutlinedInput
+                    focused={true}
                     name="name"
                     value={data.name}
                     onChange={handleChange}
