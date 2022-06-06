@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\IndexProjectsRequest;
 use App\Models\CommunicationWay;
 use App\Models\LandingPage;
 use App\Models\Project;
@@ -22,10 +23,26 @@ class MainPagesController extends Controller
         ]);
     }
 
-    public function projects()
+    public function projects(IndexProjectsRequest $request)
     {
+        $data = $request->validated();
+
+        $search = $data['search'] ?? "";
+
+        $projects = Project::where(fn($query) => $query->where('title', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%"));
+
+        if (isset($data['skills'])) {
+            $projects = $projects->whereHas('skills', fn($query) => $query->whereIn('skills.id', $data['skills']));
+        }
+
+        if (isset($data['project_section'])) {
+            $projects = $projects->whereHas('projectSection', fn($query) => $query->where('id', $data['project_section']));
+        }
+
+        $projects = $projects->paginate();
+
         return view('projects', [
-            'projects' => Project::all(),
+            'projects' => $projects,
             'skills' => Skill::all(),
             'projectSections' => ProjectSection::all(),
         ]);
