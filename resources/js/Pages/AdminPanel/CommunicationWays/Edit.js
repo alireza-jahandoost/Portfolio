@@ -83,76 +83,98 @@ const EditCommunicationWays = (props) => {
                 />
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-8">
-                        {data.communication_ways.map((communicationWay) => {
-                            return (
-                                <div
-                                    key={communicationWay.id}
-                                    className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3"
-                                >
-                                    <div className="flex gap-2">
-                                        <button
-                                            type="button"
-                                            className="text-gray-600 hover:text-gray-700 active:text-gray-800"
-                                            onClick={() =>
-                                                handleDelete(
-                                                    communicationWay.id
-                                                )
-                                            }
-                                        >
-                                            <i className="fa-solid fa-trash fa-xl" />
-                                        </button>
-                                        <div className="grow">
+                        {data.communication_ways.map(
+                            (communicationWay, idx) => {
+                                const errorPrefix = `communication_ways.${idx}`;
+                                return (
+                                    <div
+                                        key={communicationWay.id}
+                                        className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3"
+                                    >
+                                        <div className="flex gap-2">
+                                            <button
+                                                type="button"
+                                                className="text-gray-600 hover:text-gray-700 active:text-gray-800"
+                                                onClick={() =>
+                                                    handleDelete(
+                                                        communicationWay.id
+                                                    )
+                                                }
+                                            >
+                                                <i className="fa-solid fa-trash fa-xl" />
+                                            </button>
+                                            <div className="grow">
+                                                <FloatingOutlinedInput
+                                                    name="name"
+                                                    value={
+                                                        communicationWay.name
+                                                    }
+                                                    onChange={(event) =>
+                                                        handleChange(
+                                                            event,
+                                                            communicationWay
+                                                        )
+                                                    }
+                                                    id={`cw-${communicationWay.id}-name`}
+                                                    required={true}
+                                                    label="Name"
+                                                    placeholder="Name of communication way"
+                                                    error={
+                                                        errors[
+                                                            `${errorPrefix}.name`
+                                                        ]
+                                                    }
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
                                             <FloatingOutlinedInput
-                                                name="name"
-                                                value={communicationWay.name}
+                                                name="value"
+                                                value={communicationWay.value}
                                                 onChange={(event) =>
                                                     handleChange(
                                                         event,
                                                         communicationWay
                                                     )
                                                 }
-                                                id={`cw-${communicationWay.id}-name`}
+                                                id={`cw-${communicationWay.id}-value`}
                                                 required={true}
-                                                label="Name"
-                                                placeholder="Name of communication way"
+                                                label="Value"
+                                                placeholder="Value of communication way"
+                                                error={
+                                                    errors[
+                                                        `${errorPrefix}.value`
+                                                    ]
+                                                }
+                                            />
+                                        </div>
+                                        <div>
+                                            <FloatingOutlinedInput
+                                                name="icon_class"
+                                                value={
+                                                    communicationWay.icon_class
+                                                }
+                                                onChange={(event) =>
+                                                    handleChange(
+                                                        event,
+                                                        communicationWay
+                                                    )
+                                                }
+                                                id={`cw-${communicationWay.id}-icon_class`}
+                                                required={true}
+                                                label="Icon classes"
+                                                placeholder="Icon classes of communication way"
+                                                error={
+                                                    errors[
+                                                        `${errorPrefix}.icon_class`
+                                                    ]
+                                                }
                                             />
                                         </div>
                                     </div>
-                                    <div>
-                                        <FloatingOutlinedInput
-                                            name="value"
-                                            value={communicationWay.value}
-                                            onChange={(event) =>
-                                                handleChange(
-                                                    event,
-                                                    communicationWay
-                                                )
-                                            }
-                                            id={`cw-${communicationWay.id}-value`}
-                                            required={true}
-                                            label="Value"
-                                            placeholder="Value of communication way"
-                                        />
-                                    </div>
-                                    <div>
-                                        <FloatingOutlinedInput
-                                            name="icon_class"
-                                            value={communicationWay.icon_class}
-                                            onChange={(event) =>
-                                                handleChange(
-                                                    event,
-                                                    communicationWay
-                                                )
-                                            }
-                                            id={`cw-${communicationWay.id}-icon_class`}
-                                            required={true}
-                                            label="Icon classes"
-                                            placeholder="Icon classes of communication way"
-                                        />
-                                    </div>
-                                </div>
-                            );
-                        })}
+                                );
+                            }
+                        )}
                     </div>
                     <Button
                         label="Update Communication Ways"
