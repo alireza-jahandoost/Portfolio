@@ -1,4 +1,5 @@
 import React from "react";
+import ValidationError from "@/Components/Personalized/ValidationError/ValidationError";
 
 const Select = ({
     id,
@@ -9,6 +10,7 @@ const Select = ({
     labelClassName,
     selectClassName,
     children,
+    error = null,
 }) => {
     return (
         <>
@@ -27,6 +29,7 @@ const Select = ({
             >
                 {children}
             </select>
+            {error ? <ValidationError>{error}</ValidationError> : ""}
         </>
     );
 };

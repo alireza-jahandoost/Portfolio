@@ -1,4 +1,5 @@
 import React from "react";
+import ValidationError from "@/Components/Personalized/ValidationError/ValidationError";
 
 const TextInput = ({
     id,
@@ -11,6 +12,7 @@ const TextInput = ({
     placeholder,
     required = false,
     type = "text",
+    error = null,
 }) => {
     return (
         <>
@@ -30,6 +32,7 @@ const TextInput = ({
                 onChange={onChange}
                 required={required}
             />
+            {error ? <ValidationError>{error}</ValidationError> : ""}
         </>
     );
 };

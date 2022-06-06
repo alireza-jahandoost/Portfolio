@@ -1,4 +1,5 @@
 import React from "react";
+import ValidationError from "@/Components/Personalized/ValidationError/ValidationError";
 
 const Textarea = ({
     label,
@@ -9,6 +10,7 @@ const Textarea = ({
     labelClassName,
     textareaClassName,
     rowsNumber = 4,
+    error = null,
 }) => {
     return (
         <>
@@ -26,7 +28,8 @@ const Textarea = ({
                 className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${textareaClassName}`}
                 placeholder="Your message..."
                 value={value}
-            ></textarea>
+            />
+            {error ? <ValidationError>{error}</ValidationError> : ""}
         </>
     );
 };

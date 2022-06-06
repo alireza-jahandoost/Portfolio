@@ -1,4 +1,5 @@
 import React from "react";
+import ValidationError from "@/Components/Personalized/ValidationError/ValidationError";
 
 const FloatingOutlinedInput = ({
     id,
@@ -39,11 +40,7 @@ const FloatingOutlinedInput = ({
                     {label}
                 </label>
             </div>
-            {error && (
-                <p className="mt-2 text-xs text-red-600 dark:text-red-400">
-                    <span className="font-medium">{error}</span>
-                </p>
-            )}
+            {error ? <ValidationError>{error}</ValidationError> : ""}
             <p
                 className={`mt-2 text-xs text-gray-500 dark:text-gray-400 ${helperClassName}`}
             >
