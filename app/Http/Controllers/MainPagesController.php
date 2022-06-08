@@ -14,7 +14,7 @@ class MainPagesController extends Controller
 {
     public function landingPage()
     {
-        return view('landing', [
+        return view('pages.landing', [
             'landingPage' => LandingPage::first(),
             'user' => User::first(),
             'skills' => Skill::withCount('projects')->get(),
@@ -41,7 +41,7 @@ class MainPagesController extends Controller
 
         $projects = $projects->paginate();
 
-        return view('projects', [
+        return view('pages.projects.index', [
             'projects' => $projects,
             'skills' => Skill::all(),
             'projectSections' => ProjectSection::all(),
