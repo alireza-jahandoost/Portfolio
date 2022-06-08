@@ -9,7 +9,7 @@ import FileInput from "@/Components/Flowbite/FileInput/FileInput";
 import { Inertia } from "@inertiajs/inertia";
 
 const EditUserInformation = (props) => {
-    const { data, setData, errors, setError } = useForm({
+    const { data, setData, errors, setError, clearErrors } = useForm({
         name: props.auth.user.name,
         email: props.auth.user.email,
         image: null,
@@ -60,6 +60,7 @@ const EditUserInformation = (props) => {
                 },
                 onSuccess() {
                     setData("image", null);
+                    clearErrors();
                 },
                 preserveScroll: true,
             }
