@@ -24,10 +24,26 @@ class UserController extends Controller
         $data = $request->validated();
 
         auth()->user()->name = $data['name'];
+
         auth()->user()->email = $data['email'];
-        auth()->user()->about_me = $data['about_me'];
-        auth()->user()->contact_me = $data['contact_me'];
-        auth()->user()->about_me_title = $data['about_me_title'];
+
+        if (isset($data['about_me'])) {
+            auth()->user()->about_me = $data['about_me'];
+        } else {
+            auth()->user()->about_me = "";
+        }
+
+        if (isset($data['contact_me'])) {
+            auth()->user()->contact_me = $data['contact_me'];
+        } else {
+            auth()->user()->contact_me = "";
+        }
+
+        if (isset($data['about_me_title'])) {
+            auth()->user()->about_me_title = $data['about_me_title'];
+        } else {
+            auth()->user()->about_me_title = "";
+        }
 
         if (isset($data['image'])) {
             auth()->user()->image = $request->file('image')->store('profileImages');
