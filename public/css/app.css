@@ -954,9 +954,6 @@ input[type="range"]::-ms-fill-lower {
 .z-10 {
   z-index: 10;
 }
-.z-20 {
-  z-index: 20;
-}
 .col-span-full {
   grid-column: 1 / -1;
 }

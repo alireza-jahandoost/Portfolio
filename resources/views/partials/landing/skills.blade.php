@@ -3,7 +3,7 @@
     <div class="lg:w-10/12 xl:w-9/12 mx-auto">
         <div class="flex flex-wrap gap-4 justify-center mt-6">
             @foreach($skills as $skill)
-                <a href="{{route('main.projects', ['skills' => [$skill->id]])}}">
+                <a href="{{route('main.projects.index', ['skills' => [$skill->id]])}}">
                     <div class="bg-gray-600 text-white px-4 py-2 rounded-lg flex flex-col">
                         <div
                             class="text-xs text-gray-200 md:text-sm lg:text-md">

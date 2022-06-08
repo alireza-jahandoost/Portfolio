@@ -23,7 +23,7 @@ class MainPagesController extends Controller
         ]);
     }
 
-    public function projects(IndexProjectsRequest $request)
+    public function index_projects(IndexProjectsRequest $request)
     {
         $data = $request->validated();
 

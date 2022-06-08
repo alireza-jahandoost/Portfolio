@@ -2,7 +2,7 @@
     <h2 class="text-white text-4xl sm:text-5xl lg:text-7xl text-center mb-28">Projects</h2>
 </x-header-container>
 <div class="bg-gray-50 shadow-lg shadow-gray-400 mx-auto rounded-xl w-11/12 -mt-32 md:-mt-36 lg:-mt-40">
-    <form action="{{route('main.projects')}}" method="GET">
+    <form action="{{route('main.projects.index')}}" method="GET">
         <div class="p-4 grid gap-2 lg:w-10/12 mx-auto">
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="grid gap-1">

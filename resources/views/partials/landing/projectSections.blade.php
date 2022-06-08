@@ -2,7 +2,7 @@
     @foreach($projectSections as $projectSection)
         @continue(count($projectSection->projects) === 0)
         <div>
-            <a href="{{route('main.projects', ['project_section' => $projectSection->id])}}">
+            <a href="{{route('main.projects.index', ['project_section' => $projectSection->id])}}">
                 <h4 class="text-center text-2xl underline font-bold">{{$projectSection->name}}</h4>
             </a>
             <div class="flex justify-around flex-wrap gap-6 px-2 mt-8">
