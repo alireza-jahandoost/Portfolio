@@ -1304,6 +1304,9 @@ input[type="range"]::-ms-fill-lower {
 .gap-1 {
   gap: 0.25rem;
 }
+.gap-3 {
+  gap: 0.75rem;
+}
 .gap-y-8 {
   row-gap: 2rem;
 }
@@ -2624,6 +2627,10 @@ input[type="range"]::-ms-fill-lower {
     width: auto;
   }
 
+  .md\:w-10\/12 {
+    width: 83.333333%;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2781,6 +2788,10 @@ input[type="range"]::-ms-fill-lower {
     width: 18rem;
   }
 
+  .lg\:w-9\/12 {
+    width: 75%;
+  }
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2843,6 +2854,10 @@ input[type="range"]::-ms-fill-lower {
 
   .xl\:w-96 {
     width: 24rem;
+  }
+
+  .xl\:w-7\/12 {
+    width: 58.333333%;
   }
 
   .xl\:text-3xl {

@@ -86,4 +86,6 @@ Route::name('main.')->group(function () {
         ->name('landing_page');
     Route::get('/projects', [MainPagesController::class, 'index_projects'])
         ->name('projects.index');
+    Route::get('/projects/{project}', [MainPagesController::class, 'show_project'])
+        ->name('projects.show');
 });

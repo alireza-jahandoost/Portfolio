@@ -47,4 +47,11 @@ class MainPagesController extends Controller
             'projectSections' => ProjectSection::all(),
         ]);
     }
+
+    public function show_project(Project $project){
+        $project->load('skills');
+        return view('pages.projects.show', [
+            'project' => $project,
+        ]);
+    }
 }
