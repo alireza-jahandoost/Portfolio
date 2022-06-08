@@ -15,7 +15,7 @@
     </div>
 </nav>
 
-<nav class="md:hidden fixed bottom-0 w-full">
+<nav class="md:hidden fixed bottom-0 w-full z-40">
     <div class="px-4 md:hidden bg-white shadow-[0_0_10px]">
         <div class="flex justify-around text-gray-700 pb-2 pt-4 px-2">
             <div class="hover:text-gray-800{{request()->routeIs('main.landing_page') ? " text-gray-800 font-bold" : ""}}">
