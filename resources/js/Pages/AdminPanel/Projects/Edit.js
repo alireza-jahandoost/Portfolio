@@ -22,7 +22,7 @@ const EditProject = (props) => {
         );
     }, [props.project.images]);
 
-    const { data, setData, errors, setError, reset } = useForm({
+    const { data, setData, errors, setError, reset, clearErrors } = useForm({
         title: props.project.title,
         description: props.project.description,
         link_to_github: props.project.link_to_github,
@@ -54,6 +54,9 @@ const EditProject = (props) => {
             {
                 onError(err) {
                     setError(err);
+                },
+                onSuccess() {
+                    clearErrors();
                 },
             }
         );
