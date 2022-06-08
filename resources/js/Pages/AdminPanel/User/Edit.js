@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import changeHandler from "@/Utilities/changeHandler";
@@ -17,6 +17,15 @@ const EditUserInformation = (props) => {
         contact_me: props.auth.user.contact_me,
         about_me_title: props.auth.user.about_me_title,
     });
+    const [tempImage, setTempImage] = useState(
+        props.auth.user.image ? `/${props.auth.user.image}` : null
+    );
+
+    useEffect(() => {
+        if (data.image) {
+            setTempImage(URL.createObjectURL(data.image));
+        }
+    }, [data.image]);
 
     const handleChange = (event) => {
         const { key, value } = changeHandler(event);
@@ -25,9 +34,15 @@ const EditUserInformation = (props) => {
 
     const handleImageDelete = () => {
         if (confirm("Are you sure, you want to delete this image? ")) {
-            Inertia.delete(route("admin.user_profile.delete_image"), {
-                preserveScroll: true,
-            });
+            if (props.auth.user.image) {
+                Inertia.delete(route("admin.user_profile.delete_image"), {
+                    preserveScroll: true,
+                    preserveState: false,
+                });
+            } else {
+                setData("image", "");
+                setTempImage("");
+            }
         }
     };
 
@@ -94,11 +109,11 @@ const EditUserInformation = (props) => {
                             </div>
                         </div>
                         <div className="flex justify-center">
-                            {props.auth.user.image ? (
+                            {tempImage ? (
                                 <div className="w-52 h-52 lg:w-72 lg:h-72 relative">
                                     <img
                                         className="peer rounded-full h-full w-full"
-                                        src={`/${props.auth.user.image}`}
+                                        src={tempImage}
                                         alt="User Image"
                                     />
                                     <button
