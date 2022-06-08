@@ -53,7 +53,6 @@ const EditProject = (props) => {
             },
             {
                 onError(err) {
-                    console.log(err);
                     setError(err);
                 },
             }
@@ -64,7 +63,7 @@ const EditProject = (props) => {
         if (image.id) {
             setData("deleted_images", [...data.deleted_images, image.id]);
         }
-        setImages(images.filter((img) => img.mask_id !== image.id));
+        setImages(images.filter((img) => img.mask_id !== image.mask_id));
     };
 
     return (
