@@ -158,6 +158,24 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'work_experiences.*.start' => 'start of work experience',
+        'work_experiences.*.is_working' => 'is working',
+        'work_experiences.*.end' => 'end of work experience',
+        'work_experiences.*.company_name' => 'company name of work experience',
+        'work_experiences.*.role' => 'role of work experience',
+        'removed_skills.*' => 'removed skill',
+        'new_skills.*' => 'new skill',
+        'new_images.*.file' => 'file of image',
+        'new_images.*.image_alt' => 'alt attribute of image',
+        'new_images.*.image_title' => 'title attribute of image',
+        'deleted_images.*' => 'deleted image',
+        'changed_images.*.id' => 'id of image',
+        'changed_images.*.image_title' => 'title attribute of image',
+        'changed_images.*.image_alt' => 'alt attribute of image',
+        'honors.*.title' => 'title of honor',
+        'honors.*.date' => 'date of honor',
+        'honors.*.description' => 'description of honor',
+    ],
 
 ];
