@@ -25,7 +25,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:60',
-            'description' => 'required|string|max:1200',
+            'description' => 'required|string|max:2000',
             'link_to_github' => 'required|string|max:200',
             'link_to_production' => 'required|string|max:255',
             'project_section_id' => 'required|integer|exists:project_sections,id',
