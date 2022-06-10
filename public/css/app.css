@@ -2643,6 +2643,11 @@ input[type="range"]::-ms-fill-lower {
     float: right;
   }
 
+  .md\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .md\:-mt-36 {
     margin-top: -9rem;
   }
@@ -2786,6 +2791,14 @@ input[type="range"]::-ms-fill-lower {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:pl-6 {
+    padding-left: 1.5rem;
+  }
+
+  .md\:pb-6 {
+    padding-bottom: 1.5rem;
   }
 
   .md\:text-left {
