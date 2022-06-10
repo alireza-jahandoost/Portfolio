@@ -35,7 +35,9 @@
     @include('partials.general.navbar')
 </header>
 
-{{$slot}}
+<main>
+    {{$slot}}
+</main>
 
 
 {{$scriptSlot ?? ""}}
