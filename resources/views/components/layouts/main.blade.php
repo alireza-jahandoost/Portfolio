@@ -29,18 +29,23 @@
 
     {{$headerSlot ?? ""}}
 </head>
-<body class="antialiased">
+<body class="antialiased min-h-screen flex flex-col">
 
 <header>
     @include('partials.general.navbar')
 </header>
 
-<main>
+<main class="grow">
     <div class="mb-20 md:mb-0">
         {{$slot}}
     </div>
 </main>
 
+<footer>
+    <div class="bg-black text-white text-center py-2">
+        Licensed under <a class="hover:text-blue-600 hover:underline" href="https://github.com/alireza-jahandoost/Portfolio/blob/main/LICENSE">MIT</a>
+    </div>
+</footer>
 
 {{$scriptSlot ?? ""}}
 </body>
