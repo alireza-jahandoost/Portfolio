@@ -1,5 +1,10 @@
 <x-layouts.main>
 
+    <x-slot name="metaTags">
+        <title>Projects of {{auth()->user()->name}}</title>
+        <meta name="author" content="Alireza Jahandoost">
+    </x-slot>
+
     <x-slot name="headerSlot">
         <link rel="stylesheet" type="text/css"
               href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css">

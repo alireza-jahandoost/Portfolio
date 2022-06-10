@@ -1,4 +1,13 @@
 <x-layouts.main>
+
+    <x-slot name="metaTags">
+        <title>Portfolio of {{auth()->user()->name}}</title>
+        <meta name="description"
+              content="Portfolio of {{auth()->user()->name}}, including projects and skills, contact information and about me section">
+        <meta name="keywords" content="portfolio, Alireza Jahandoost, projects, skills, contact, about">
+        <meta name="author" content="Alireza Jahandoost">
+    </x-slot>
+
     <div class="grid gap-y-8">
         @include('partials.general.navbar')
         <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12 md:gap-y-16 lg:gap-y-20">
