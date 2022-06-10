@@ -16,9 +16,9 @@
     </div>
 </nav>
 
-<nav aria-label="Navbar for mobile users" class="md:hidden fixed bottom-0 w-full z-40">
-    <div class="px-4 md:hidden bg-white shadow-[0_0_10px]">
-        <div class="flex justify-around text-gray-700 pb-2 pt-4 px-2">
+<nav aria-label="Navbar for mobile users" class="md:hidden fixed bottom-0 w-full h-16 z-40">
+    <div class="px-4 md:hidden bg-white shadow-[0_0_10px] h-full">
+        <div class="flex justify-around items-center text-gray-700px-2 h-full">
             <div
                 class="hover:text-gray-800{{request()->routeIs('main.landing_page') ? " text-gray-800 font-bold" : ""}}">
                 <a href="{{route('main.landing_page')}}">
