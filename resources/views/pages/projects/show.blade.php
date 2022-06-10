@@ -23,4 +23,18 @@
             </div>
         </div>
     </div>
+
+    <x-slot name="scriptSlot">
+        @if(count($project->images) > 1)
+            <script src="/js/slidr.min.js"></script>
+            <script>
+                slidr.create('image-slider', {
+                    breadcrumbs: true,
+                    keyboard: true,
+                    pause: true,
+                    touch: true,
+                }).start();
+            </script>
+        @endif
+    </x-slot>
 </x-layouts.main>
