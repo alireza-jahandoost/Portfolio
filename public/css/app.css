@@ -1069,6 +1069,18 @@ input[type="range"]::-ms-fill-lower {
 .ml-6 {
   margin-left: 1.5rem;
 }
+.mt-40 {
+  margin-top: 10rem;
+}
+.mt-96 {
+  margin-top: 24rem;
+}
+.mb-40 {
+  margin-bottom: 10rem;
+}
+.mb-20 {
+  margin-bottom: 5rem;
+}
 .block {
   display: block;
 }
@@ -2641,6 +2653,10 @@ input[type="range"]::-ms-fill-lower {
 
   .md\:mr-0 {
     margin-right: 0px;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:block {

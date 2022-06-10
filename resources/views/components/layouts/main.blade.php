@@ -36,7 +36,9 @@
 </header>
 
 <main>
-    {{$slot}}
+    <div class="mb-20 md:mb-0">
+        {{$slot}}
+    </div>
 </main>
 
 
