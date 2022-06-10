@@ -1,4 +1,4 @@
-<nav class="hidden md:block my-6">
+<nav aria-label="Navbar for desktop users" class="hidden md:block my-6">
     <div class="max-w-screen-2xl mx-auto px-4 hidden md:block">
         <div class="flex items-center flex-wrap gap-8 lg:gap-12 text-gray-700 my-4 px-2">
             <div
@@ -16,7 +16,7 @@
     </div>
 </nav>
 
-<nav class="md:hidden fixed bottom-0 w-full z-40">
+<nav aria-label="Navbar for mobile users" class="md:hidden fixed bottom-0 w-full z-40">
     <div class="px-4 md:hidden bg-white shadow-[0_0_10px]">
         <div class="flex justify-around text-gray-700 pb-2 pt-4 px-2">
             <div
