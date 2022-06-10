@@ -8,30 +8,15 @@
             <div class="">
                 <div class="mb-4">
                     @if($project->link_to_github)
-                        <a href="{{$project->link_to_github}}"
-                           class="text-xl flex gap-1 items-center text-gray-700 hover:text-gray-800 active:text-gray-900"
-                           title="github repository">
-                            <i class="fa-brands fa-github"></i>
-                            <span class="">Github repository of project</span>
-                        </a>
+                        <x-project-link :href="$project->link_to_github" link-label="Github repository of project"
+                                        icon-classes="fa-brands fa-github"></x-project-link>
                     @endif
                     @if($project->link_to_production)
-                        <a href="{{$project->link_to_production}}"
-                           class="text-xl flex gap-1 items-center text-gray-700 hover:text-gray-800 active:text-gray-900"
-                           title="github repository">
-                            <i class="fa-solid fa-globe"></i>
-                            <span class="">site of project</span>
-                        </a>
+                        <x-project-link :href="$project->link_to_production" link-label="Site of project"
+                                        icon-classes="fa-solid fa-globe"></x-project-link>
                     @endif
                 </div>
-                @if(count($project->images) !== 0)
-                    <div class="md:float-right pl-6 pb-6">
-                        <img class="rounded-md w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 mx-auto"
-                             src="/{{$project->images[0]->image_url}}"
-                             alt="{{$project->images[0]->image_alt}}"
-                             title="{{$project->images[0]->image_title}}"/>
-                    </div>
-                @endif
+                @include('partials.pages.projects.show.project-images')
                 <div class="">
                     @markdown($project->description)
                 </div>
