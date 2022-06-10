@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.children-links-text-blue-600 a{
+    @apply text-blue-600;
+}
+
 .overflow-2-line {
     @apply [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] text-ellipsis break-words overflow-hidden
 }
