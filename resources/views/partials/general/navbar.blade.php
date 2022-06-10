@@ -1,4 +1,4 @@
-<nav class="hidden md:block">
+<nav class="hidden md:block my-6">
     <div class="max-w-screen-2xl mx-auto px-4 hidden md:block">
         <div class="flex items-center flex-wrap gap-8 lg:gap-12 text-gray-700 my-4 px-2">
             <div
