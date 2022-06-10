@@ -3,9 +3,16 @@
     <x-slot name="metaTags">
         <title>Portfolio of {{auth()->user()->name}}</title>
         <meta name="description"
-              content="Portfolio of {{auth()->user()->name}}, including projects and skills, contact information and about me section">
-        <meta name="keywords" content="portfolio, Alireza Jahandoost, projects, skills, contact, about">
-        <meta name="author" content="Alireza Jahandoost">
+              content="Portfolio of {{auth()->user()->name}}, including projects and skills, contact information and about me section"/>
+        <meta name="keywords" content="portfolio, Alireza Jahandoost, projects, skills, contact, about"/>
+        <meta name="author" content="Alireza Jahandoost"/>
+
+        <meta name="og:title" content="Portfolio of {{auth()->user()->name}}"/>
+        <meta name="og:description"
+              content="Portfolio of {{auth()->user()->name}}, including projects and skills, contact information and about me section"/>
+        @if(auth()->user()->image)
+            <meta name="og:image" content="{{auth()->user()->image}}"/>
+        @endif
     </x-slot>
 
     <div class="grid gap-y-8">

@@ -2,7 +2,12 @@
 
     <x-slot name="metaTags">
         <title>Projects of {{auth()->user()->name}}</title>
-        <meta name="author" content="Alireza Jahandoost">
+        <meta name="author" content="Alireza Jahandoost"/>
+
+        <meta name="og:title" content="Projects of {{auth()->user()->name}}"/>
+        @if(auth()->user()->image)
+            <meta name="og:image" content="{{auth()->user()->image}}"/>
+        @endif
     </x-slot>
 
     <x-slot name="headerSlot">

@@ -3,6 +3,11 @@
     <x-slot name="metaTags">
         <title>Projects of {{auth()->user()->name}} - {{$project->title}}</title>
         <meta name="author" content="Alireza Jahandoost">
+
+        <meta name="og:title" content="Projects of {{auth()->user()->name}} - {{$project->title}}"/>
+        @if(auth()->user()->image)
+            <meta name="og:image" content="{{auth()->user()->image}}"/>
+        @endif
     </x-slot>
 
     <div class="grid gap-y-8">
