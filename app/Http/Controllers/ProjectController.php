@@ -68,6 +68,9 @@ class ProjectController extends Controller
         $keys = ['title', 'description', 'link_to_github', 'link_to_production'];
 
         foreach ($keys as $key) {
+            if(!in_array($key, array_keys($data))){
+                continue;
+            }
             $project->$key = $data[$key];
         }
     }

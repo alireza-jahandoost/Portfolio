@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->integer('order');
-            $table->string('link_to_github');
-            $table->string('link_to_production');
+            $table->string('link_to_github')->nullable();
+            $table->string('link_to_production')->nullable();
             $table->timestamps();
         });
     }

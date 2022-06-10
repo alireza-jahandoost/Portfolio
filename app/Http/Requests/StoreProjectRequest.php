@@ -26,8 +26,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => 'required|string|max:60',
             'description' => 'required|string|max:1200',
-            'link_to_github' => 'required|string|max:200',
-            'link_to_production' => 'required|string|max:255',
+            'link_to_github' => 'nullable|string|max:200',
+            'link_to_production' => 'nullable|string|max:255',
             'project_section_id' => 'required|integer|exists:project_sections,id',
             'images' => 'array',
             'images.*.file' => 'required|image|max:3000',
