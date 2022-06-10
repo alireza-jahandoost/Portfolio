@@ -6,7 +6,7 @@
                 <a href="{{route('main.landing_page')}}">Home</a>
             </div>
             <div
-                class="hover:text-gray-800{{request()->routeIs('main.projects.index') ? " text-gray-800 font-bold" : ""}}">
+                class="hover:text-gray-800{{request()->routeIs('main.projects.*') ? " text-gray-800 font-bold" : ""}}">
                 <a href="{{route('main.projects.index')}}">Projects</a>
             </div>
             <div class="ml-auto hover:text-gray-800 text-lg">
@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div
-                class="hover:text-gray-800{{request()->routeIs('main.projects.index') ? " text-gray-800 font-bold" : ""}}">
+                class="hover:text-gray-800{{request()->routeIs('main.projects.*') ? " text-gray-800 font-bold" : ""}}">
                 <a href="{{route('main.projects.index')}}">
                     <div class="flex flex-col">
                         <i class="fa-solid fa-globe text-center text-2xl"></i>
