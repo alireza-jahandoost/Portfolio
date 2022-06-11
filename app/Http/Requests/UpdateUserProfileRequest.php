@@ -24,12 +24,12 @@ class UpdateUserProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50',
-            'email' => 'required|email|max:80',
-            'about_me' => 'nullable|string|max:2000',
-            'contact_me' => 'nullable|string|max:1000',
-            'about_me_title' => 'nullable|string|max:1000',
-            'image' => 'nullable|image|max:2000',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'about_me' => 'nullable|string|max:65000',
+            'contact_me' => 'nullable|string|max:65000',
+            'about_me_title' => 'nullable|string|max:65000',
+            'image' => 'nullable|image|max:10000',
         ];
     }
 }

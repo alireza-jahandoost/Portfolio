@@ -24,8 +24,8 @@ class UpdateSkillRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50',
-            'icon_class' => 'nullable|string|max:50',
+            'name' => 'required|string|max:255',
+            'icon_class' => 'nullable|string|max:255',
             'is_fluent' => 'required|boolean',
         ];
     }

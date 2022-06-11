@@ -25,9 +25,9 @@ class UpdateHonorRequest extends FormRequest
     {
         return [
             'honors' => 'array',
-            'honors.*.title' => 'required|string|max:60',
+            'honors.*.title' => 'required|string|max:255',
             'honors.*.date' => 'required|date',
-            'honors.*.description' => 'required|string|max:300',
+            'honors.*.description' => 'required|string|max:65000',
         ];
     }
 }

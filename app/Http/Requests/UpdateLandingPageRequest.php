@@ -24,8 +24,8 @@ class UpdateLandingPageRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:60',
-            'description' => 'required|string|max:500',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:65000',
         ];
     }
 }

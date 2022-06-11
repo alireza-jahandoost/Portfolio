@@ -25,9 +25,9 @@ class UpdateCommunicationWayRequest extends FormRequest
     {
         return [
             'communication_ways' => 'array',
-            'communication_ways.*.name' => 'string|max:80',
-            'communication_ways.*.value' => 'string|max:80',
-            'communication_ways.*.icon_class' => 'string|max:80',
+            'communication_ways.*.name' => 'string|max:255',
+            'communication_ways.*.value' => 'string|max:255',
+            'communication_ways.*.icon_class' => 'string|max:255',
         ];
     }
 }

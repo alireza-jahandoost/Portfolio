@@ -24,7 +24,7 @@ class UpdateProjectSectionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50',
+            'name' => 'required|string|max:255',
         ];
     }
 }

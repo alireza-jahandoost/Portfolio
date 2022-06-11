@@ -28,8 +28,8 @@ class UpdateWorkExperienceRequest extends FormRequest
             'work_experiences.*.start' => 'required|date',
             'work_experiences.*.is_working' => 'required|boolean',
             'work_experiences.*.end' => 'nullable|date|after:work_experiences.*.start|exclude_if:work_experiences.*.is_working,true',
-            'work_experiences.*.company_name' => 'required|string|max:100',
-            'work_experiences.*.role' => 'required|string|max:100',
+            'work_experiences.*.company_name' => 'required|string|max:255',
+            'work_experiences.*.role' => 'required|string|max:255',
         ];
     }
 }

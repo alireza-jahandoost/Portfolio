@@ -24,21 +24,21 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:60',
-            'description' => 'required|string|max:2000',
-            'link_to_github' => 'nullable|string|max:200',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:65000',
+            'link_to_github' => 'nullable|string|max:255',
             'link_to_production' => 'nullable|string|max:255',
             'project_section_id' => 'required|integer|exists:project_sections,id',
             'new_images' => 'nullable|array',
-            'new_images.*.file' => 'required|image|max:3000',
-            'new_images.*.image_alt' => 'required|string|max:80',
-            'new_images.*.image_title' => 'required|string|max:80',
+            'new_images.*.file' => 'required|image|max:10000',
+            'new_images.*.image_alt' => 'required|string|max:255',
+            'new_images.*.image_title' => 'required|string|max:255',
             'deleted_images' => 'nullable|array',
             'deleted_images.*' => 'required|integer|exists:project_images,id',
             'changed_images' => 'nullable|array',
             'changed_images.*.id' => 'required|integer|exists:project_images,id',
-            'changed_images.*.image_title' => 'required|string|max:80',
-            'changed_images.*.image_alt' => 'required|string|max:80',
+            'changed_images.*.image_title' => 'required|string|max:255',
+            'changed_images.*.image_alt' => 'required|string|max:255',
         ];
     }
 }
