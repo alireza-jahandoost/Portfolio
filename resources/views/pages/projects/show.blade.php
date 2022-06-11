@@ -12,10 +12,19 @@
 
     <div class="grid gap-y-8">
         <div class="w-full max-w-screen-2xl mx-auto md:px-4 grid gap-12 md:gap-y-16 lg:gap-y-20">
-            @include('partials.pages.projects.show.header')
+            {{--            @include('partials.pages.projects.show.header')--}}
             <section>
                 <div class="px-8 my-4">
                     <div class="">
+                        @include('partials.pages.projects.show.project-images')
+                        <header>
+                            <h1 class="text-4xl sm:text-5xl lg:text-7xl mb-2 mt-4">{{$project->title}}</h1>
+                        </header>
+                        <div class="flex justify-start gap-3 flex-wrap mx-auto my-8">
+                            @foreach($project->skills as $skill)
+                                <div class="bg-gray-500 font-bold text-white py-2 px-4 rounded-full">{{$skill->name}}</div>
+                            @endforeach
+                        </div>
                         <div class="mb-4">
                             @if($project->link_to_github)
                                 <x-project-link :href="$project->link_to_github"
@@ -27,7 +36,6 @@
                                                 icon-classes="fa-solid fa-globe"></x-project-link>
                             @endif
                         </div>
-                        @include('partials.pages.projects.show.project-images')
                         <div class="">
                             @markdown($project->description)
                         </div>
