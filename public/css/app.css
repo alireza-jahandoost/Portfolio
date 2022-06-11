@@ -1063,6 +1063,12 @@ input[type="range"]::-ms-fill-lower {
 .mb-auto {
   margin-bottom: auto;
 }
+.-mt-40 {
+  margin-top: -10rem;
+}
+.-mt-24 {
+  margin-top: -6rem;
+}
 .block {
   display: block;
 }
@@ -2637,6 +2643,14 @@ input[type="range"]::-ms-fill-lower {
     margin-right: 0px;
   }
 
+  .md\:-mt-24 {
+    margin-top: -6rem;
+  }
+
+  .md\:-mt-20 {
+    margin-top: -5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2818,12 +2832,36 @@ input[type="range"]::-ms-fill-lower {
     grid-column: span 2 / span 2;
   }
 
-  .lg\:-mt-40 {
-    margin-top: -10rem;
+  .lg\:-mt-52 {
+    margin-top: -13rem;
   }
 
   .lg\:ml-0 {
     margin-left: 0px;
+  }
+
+  .lg\:-mt-64 {
+    margin-top: -16rem;
+  }
+
+  .lg\:-mt-32 {
+    margin-top: -8rem;
+  }
+
+  .lg\:-mt-28 {
+    margin-top: -7rem;
+  }
+
+  .lg\:-mt-24 {
+    margin-top: -6rem;
+  }
+
+  .lg\:-mt-20 {
+    margin-top: -5rem;
+  }
+
+  .lg\:-mt-40 {
+    margin-top: -10rem;
   }
 
   .lg\:h-96 {

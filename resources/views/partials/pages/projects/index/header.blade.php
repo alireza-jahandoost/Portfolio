@@ -4,7 +4,7 @@
            <h1 class="text-white text-4xl sm:text-5xl lg:text-7xl text-center mb-28">Projects</h1>
        </header>
     </x-header-container>
-    <div class="bg-gray-50 shadow-lg shadow-gray-400 mx-auto rounded-xl w-11/12 -mt-32 md:-mt-36 lg:-mt-40">
+    <div class="bg-gray-50 shadow-lg shadow-gray-400 mx-auto rounded-xl w-11/12 -mt-24 md:-mt-20 lg:-mt-20">
         <form action="{{route('main.projects.index')}}" method="GET">
             <div class="p-4 grid gap-2 lg:w-10/12 mx-auto">
                 <div class="grid gap-2 md:grid-cols-2">
