@@ -10,7 +10,7 @@
                 <a href="{{route('main.projects.index')}}">Projects</a>
             </div>
             <div class="ml-auto hover:text-gray-800 text-lg">
-                Alireza Jahandoost
+                {{$user->name}}
             </div>
         </div>
     </div>
