@@ -15,29 +15,35 @@
             {{--            @include('partials.pages.projects.show.header')--}}
             <section>
                 <div class="px-8 my-4">
-                    <div class="">
-                        @include('partials.pages.projects.show.project-images')
-                        <header>
-                            <h1 class="text-4xl sm:text-5xl lg:text-7xl mb-2 mt-4">{{$project->title}}</h1>
-                        </header>
-                        <div class="flex justify-start gap-3 flex-wrap mx-auto my-8">
-                            @foreach($project->skills as $skill)
-                                <div class="bg-gray-500 font-bold text-white py-2 px-4 rounded-full">{{$skill->name}}</div>
-                            @endforeach
-                        </div>
-                        <div class="mb-4">
-                            @if($project->link_to_github)
-                                <x-project-link :href="$project->link_to_github"
-                                                link-label="Github repository of project"
-                                                icon-classes="fa-brands fa-github"></x-project-link>
-                            @endif
-                            @if($project->link_to_production)
-                                <x-project-link :href="$project->link_to_production" link-label="Site of project"
-                                                icon-classes="fa-solid fa-globe"></x-project-link>
-                            @endif
+                    <div class="lg:flex">
+                        <div class="md:float-right lg:float-none lg:order-1">
+                            <div class="lg:sticky lg:top-24 lg:mt-8">
+                                @include('partials.pages.projects.show.project-images')
+                            </div>
                         </div>
                         <div class="">
-                            @markdown($project->description)
+                            <header>
+                                <h1 class="text-4xl sm:text-5xl lg:text-7xl mb-2 mt-4">{{$project->title}}</h1>
+                            </header>
+                            <div class="flex justify-start gap-3 flex-wrap mx-auto my-8">
+                                @foreach($project->skills as $skill)
+                                    <div class="bg-gray-500 font-bold text-white py-2 px-4 rounded-full">{{$skill->name}}</div>
+                                @endforeach
+                            </div>
+                            <div class="mb-4">
+                                @if($project->link_to_github)
+                                    <x-project-link :href="$project->link_to_github"
+                                                    link-label="Github repository of project"
+                                                    icon-classes="fa-brands fa-github"></x-project-link>
+                                @endif
+                                @if($project->link_to_production)
+                                    <x-project-link :href="$project->link_to_production" link-label="Site of project"
+                                                    icon-classes="fa-solid fa-globe"></x-project-link>
+                                @endif
+                            </div>
+                            <div class="">
+                                @markdown($project->description)
+                            </div>
                         </div>
                     </div>
                 </div>
