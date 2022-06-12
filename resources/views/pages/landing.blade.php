@@ -1,17 +1,17 @@
 <x-layouts.main>
 
     <x-slot name="metaTags">
-        <title>Portfolio of {{auth()->user()->name}}</title>
+        <title>Portfolio of {{$user->name}}</title>
         <meta name="description"
-              content="Portfolio of {{auth()->user()->name}}, including projects and skills, contact information and about me section"/>
+              content="Portfolio of {{$user->name}}, including projects and skills, contact information and about me section"/>
         <meta name="keywords" content="portfolio, Alireza Jahandoost, projects, skills, contact, about"/>
         <meta name="author" content="Alireza Jahandoost"/>
 
-        <meta name="og:title" content="Portfolio of {{auth()->user()->name}}"/>
+        <meta name="og:title" content="Portfolio of {{$user->name}}"/>
         <meta name="og:description"
-              content="Portfolio of {{auth()->user()->name}}, including projects and skills, contact information and about me section"/>
-        @if(auth()->user()->image)
-            <meta name="og:image" content="{{auth()->user()->image}}"/>
+              content="Portfolio of {{$user->name}}, including projects and skills, contact information and about me section"/>
+        @if($user->image)
+            <meta name="og:image" content="{{$user->image}}"/>
         @endif
     </x-slot>
 

@@ -1,12 +1,12 @@
 <x-layouts.main>
 
     <x-slot name="metaTags">
-        <title>Projects of {{auth()->user()->name}} - {{$project->title}}</title>
+        <title>Projects of {{$user->name}} - {{$project->title}}</title>
         <meta name="author" content="Alireza Jahandoost">
 
-        <meta name="og:title" content="Projects of {{auth()->user()->name}} - {{$project->title}}"/>
-        @if(auth()->user()->image)
-            <meta name="og:image" content="{{auth()->user()->image}}"/>
+        <meta name="og:title" content="Projects of {{$user->name}} - {{$project->title}}"/>
+        @if($user->image)
+            <meta name="og:image" content="{{$user->image}}"/>
         @endif
     </x-slot>
 
