@@ -29,7 +29,7 @@
 
     {{$headerSlot ?? ""}}
 </head>
-<body class="antialiased min-h-screen flex flex-col mb-16 md:mb-0">
+<body class="antialiased min-h-screen flex flex-col mb-16 md:mt-20 md:mb-0">
 
 <header>
     @include('partials.general.navbar')

@@ -1,6 +1,6 @@
-<nav aria-label="Navbar for desktop users" class="hidden md:block my-6">
+<nav aria-label="Navbar for desktop users" class="hidden md:block bg-white fixed top-0 w-full shadow-lg z-50">
     <div class="max-w-screen-2xl mx-auto px-4 hidden md:block">
-        <div class="flex items-center flex-wrap gap-8 lg:gap-12 text-gray-700 my-4 px-2">
+        <div class="flex items-center flex-wrap gap-8 lg:gap-12 text-gray-700 h-20 px-2">
             <div
                 class="hover:text-gray-800{{request()->routeIs('main.landing_page') ? " text-gray-800 font-bold" : ""}}">
                 <a href="{{route('main.landing_page')}}">Home</a>

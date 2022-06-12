@@ -1063,6 +1063,9 @@ input[type="range"]::-ms-fill-lower {
 .mb-auto {
   margin-bottom: auto;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
 .block {
   display: block;
 }
@@ -2643,6 +2646,10 @@ input[type="range"]::-ms-fill-lower {
 
   .md\:mr-0 {
     margin-right: 0px;
+  }
+
+  .md\:mt-20 {
+    margin-top: 5rem;
   }
 
   .md\:block {
