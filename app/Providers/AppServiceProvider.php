@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,6 +34,8 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo Str::markdown(explode(PHP_EOL, $expression)[0]) ?>";
         });
 
-        View::share('user', User::first());
+        if(Schema::hasTable('users')){
+            View::share('user', User::first());
+        }
     }
 }
