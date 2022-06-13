@@ -33,7 +33,7 @@ const IndexSkills = (props) => {
                     {props.skills.map((skill) => (
                         <SkillCard
                             skill={skill}
-                            handleDelete={handleDelete}
+                            handleDelete={() => handleDelete({ skill })}
                             key={skill.id}
                         />
                     ))}
