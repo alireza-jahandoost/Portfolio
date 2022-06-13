@@ -5,7 +5,7 @@
         <meta name="description"
               content="Portfolio of {{$user->name}}, including projects and skills, contact information and about me section"/>
         <meta name="keywords" content="portfolio, Alireza Jahandoost, projects, skills, contact, about"/>
-        <meta name="author" content="Alireza Jahandoost"/>
+        <meta name="author" content="{{$user->admin}}"/>
 
         <meta name="og:title" content="Portfolio of {{$user->name}}"/>
         <meta name="og:description"
