@@ -73,7 +73,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://alirezajahandoost.com)
+<div align="center">
+  <a href="https://alirezajahandoost.com">
+    <img src="images/screenshot.png" alt="Screenshot of project">
+  </a>
+</div>
 
 After some projects, finally, I decided to start my portfolio. I tried to make it as customizable as I can, so that others can use it as well.
 
