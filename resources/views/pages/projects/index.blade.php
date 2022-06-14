@@ -2,7 +2,7 @@
 
     <x-slot name="metaTags">
         <title>Projects of {{$user->name}}</title>
-        <meta name="author" content="{{$user->admin}}"/>
+        <meta name="author" content="{{$user->name}}"/>
 
         <meta name="og:title" content="Projects of {{$user->name}}"/>
         @if($user->image)
