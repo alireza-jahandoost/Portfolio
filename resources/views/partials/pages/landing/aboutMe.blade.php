@@ -13,8 +13,8 @@
                 <header>
                     <h2 class="text-gray-700 text-md">About me</h2>
                 </header>
-                <div class="text-lg sm:text-xl xl:text-3xl font-semibold">@markdown($user->about_me_title??"")</div>
-                <div class="children-links-text-blue-600 text-xs sm:text-sm xl:text-lg flex flex-col gap-2">@markdown($user->about_me??"")</div>
+                <div class="prose text-lg sm:text-xl xl:text-3xl font-semibold">@markdown($user->about_me_title??"")</div>
+                <div class="prose text-xs sm:text-sm xl:text-lg flex flex-col gap-2">@markdown($user->about_me??"")</div>
             </div>
         </div>
     </div>
