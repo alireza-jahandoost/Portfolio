@@ -1997,6 +1997,9 @@ input[type="range"]::-ms-fill-lower {
 .pb-8 {
   padding-bottom: 2rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
 .text-left {
   text-align: left;
 }

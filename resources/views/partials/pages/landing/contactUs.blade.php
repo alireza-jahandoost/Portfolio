@@ -1,6 +1,6 @@
 <section>
     <div class="w-full bg-gradient-to-b from-white to-black/30 flex flex-col pt-4 pb-8 mt-8">
-        <div class="h-52 flex flex-col items-center">
+        <div class="flex flex-col items-center pb-6">
             <header>
                 <h2 class="text-2xl underline font-bold">Contact Me</h2>
             </header>
