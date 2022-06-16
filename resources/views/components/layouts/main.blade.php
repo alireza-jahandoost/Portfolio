@@ -11,6 +11,10 @@
 
     <!-- Styles -->
 
+    @if(\Illuminate\Support\Facades\Storage::exists("/favicon.ico"))
+        <link rel="icon" href="/favicon.ico"/>
+    @endif
+
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
