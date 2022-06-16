@@ -16,7 +16,7 @@
             <section>
                 <div class="px-8 my-4">
                     <div class="lg:flex">
-                        <div class="md:float-right lg:float-none lg:order-1">
+                        <div class="md:float-right lg:float-none lg:order-1 mx-auto">
                             <div class="lg:sticky lg:top-24 lg:mt-8">
                                 @include('partials.pages.projects.show.project-images')
                             </div>

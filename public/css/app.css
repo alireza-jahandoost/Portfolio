@@ -3264,6 +3264,10 @@ aside[id*="-control"] .slidr-control:after {
     top: 6rem;
   }
 
+  .lg\:top-32 {
+    top: 8rem;
+  }
+
   .lg\:order-1 {
     order: 1;
   }
@@ -3286,6 +3290,10 @@ aside[id*="-control"] .slidr-control:after {
 
   .lg\:-mt-20 {
     margin-top: -5rem;
+  }
+
+  .lg\:mt-16 {
+    margin-top: 4rem;
   }
 
   .lg\:flex {
@@ -3392,6 +3400,10 @@ aside[id*="-control"] .slidr-control:after {
     height: 24rem;
   }
 
+  .xl\:h-\[30rem\] {
+    height: 30rem;
+  }
+
   .xl\:w-96 {
     width: 24rem;
   }
@@ -3402,6 +3414,14 @@ aside[id*="-control"] .slidr-control:after {
 
   .xl\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .xl\:w-\[20rem\] {
+    width: 20rem;
+  }
+
+  .xl\:w-\[30rem\] {
+    width: 30rem;
   }
 
   .xl\:text-3xl {
