@@ -1659,6 +1659,13 @@ input[type="range"]::-ms-fill-lower {
 .gap-y-8 {
   row-gap: 2rem;
 }
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.gap-y-12 {
+  row-gap: 3rem;
+}
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
