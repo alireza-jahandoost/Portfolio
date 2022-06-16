@@ -1,7 +1,7 @@
 <a href="{{route('main.projects.show', [$project])}}">
     <section>
-        <div class="w-52 md:w-60 lg:w-52 text-center hover:-translate-y-2 duration-200 group">
-            <div class="w-52 h-52 md:w-60 md:w-60 lg:w-52 lg:h-52 bg-gray-400 rounded-md border">
+        <div class="w-52 md:w-60 lg:w-80 xl:w-96 text-center hover:-translate-y-2 duration-200 group">
+            <div class="w-52 h-52 md:w-60 md:w-60 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-gray-400 rounded-md border">
                 @if(count($project->images) > 0)
                     <img src="/{{$project->images[0]->image_url}}"
                          title="{{$project->images[0]->image_title}}"
