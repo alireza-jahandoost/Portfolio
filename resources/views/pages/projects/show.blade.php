@@ -27,7 +27,8 @@
                             </header>
                             <div class="flex justify-start gap-3 flex-wrap mx-auto my-8">
                                 @foreach($project->skills as $skill)
-                                    <div class="bg-gray-500 font-bold text-white py-2 px-4 rounded-full">{{$skill->name}}</div>
+                                    <div
+                                        class="bg-gray-500 font-bold text-white py-2 px-4 rounded-full">{{$skill->name}}</div>
                                 @endforeach
                             </div>
                             <div class="mb-4">
@@ -60,6 +61,7 @@
                     keyboard: true,
                     pause: true,
                     touch: true,
+                    overflow: true,
                 }).start();
             </script>
         @endif

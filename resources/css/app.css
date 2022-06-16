@@ -2,10 +2,65 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.children-links-text-blue-600 a{
+.children-links-text-blue-600 a {
     @apply text-blue-600;
 }
 
 .overflow-2-line {
     @apply [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] text-ellipsis break-words overflow-hidden
+}
+
+aside[id="image-slider-control"] .slidr-control.right {
+    width: 50px !important;
+    height: 50px !important;
+    top: 50% !important;
+    margin-top: -25px !important;
+    right: -25px !important;
+    border-radius: 25px;
+    background: url('/arrow_right.png') 14px 13px no-repeat black;
+    opacity: 0.4;
+}
+
+aside[id="image-slider-control"] .slidr-control.right:hover {
+    opacity: 1;
+}
+
+aside[id="image-slider-control"] .slidr-control.right:after {
+    border-color: transparent !important;
+}
+
+aside[id="image-slider-control"] .slidr-control:after {
+    border-color: transparent !important;
+}
+
+aside[id*="-control"] .slidr-control:after {
+    border-color: transparent !important;
+}
+
+
+aside[id="image-slider-control"] .slidr-control.left {
+    width: 50px !important;
+    height: 50px !important;
+    top: 50% !important;
+    margin-top: -25px !important;
+    left: -25px !important;
+    border-radius: 25px;
+    background: url('/arrow_left.png') 14px 13px no-repeat black;
+    opacity: 0.4;
+}
+
+aside[id="image-slider-control"] .slidr-control.left:hover {
+    opacity: 1;
+}
+
+aside[id="image-slider-control"] .slidr-control.left:after {
+    border-color: transparent !important;
+}
+
+aside[id="image-slider-control"] .slidr-control:after {
+    border-color: transparent !important;
+}
+
+aside[id*="-control"] .slidr-control:after {
+    border-color: transparent !important;
 }
