@@ -40,7 +40,7 @@
 </main>
 
 <footer>
-    <div class="bg-black text-white text-center py-2">
+    <div class="bg-black/80 text-white text-center py-6">
         Licensed under <a class="hover:text-blue-600 hover:underline"
                           href="https://github.com/alireza-jahandoost/Portfolio/blob/main/LICENSE">MIT</a>
     </div>
