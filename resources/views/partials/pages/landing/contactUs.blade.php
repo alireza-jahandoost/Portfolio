@@ -4,8 +4,8 @@
             <header>
                 <h2 class="text-2xl underline font-bold">Contact Me</h2>
             </header>
-            <div class="text-md mt-4 p-2 text-center max-w-2xl text-gray-800">
-                {{$user->contact_me}}
+            <div class="prose text-md mt-4 p-2 text-center max-w-2xl text-gray-800">
+                @markdown($user->contact_me??"")
             </div>
         </div>
         <div class="flex justify-center">
