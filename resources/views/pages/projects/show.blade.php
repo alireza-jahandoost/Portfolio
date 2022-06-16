@@ -42,7 +42,7 @@
                                                     icon-classes="fa-solid fa-globe"></x-project-link>
                                 @endif
                             </div>
-                            <div class="">
+                            <div class="prose">
                                 @markdown($project->description)
                             </div>
                         </div>
