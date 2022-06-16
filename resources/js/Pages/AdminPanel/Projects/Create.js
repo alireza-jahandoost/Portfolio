@@ -65,7 +65,7 @@ const CreateProject = (props) => {
                         }
                     />
                     <Button
-                        label="Create Project Section"
+                        label="Create Project"
                         type="submit"
                         className="my-4"
                     />
