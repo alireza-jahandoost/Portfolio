@@ -13,7 +13,7 @@
                 @foreach($communicationWays as $communicationWay)
                     <a href="{{$communicationWay->value}}">
                         <div
-                            class="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
+                            class="w-12 h-12 rounded-full flex items-center justify-center bg-black text-gray-400 hover:text-lg duration-100">
                             <i class="{{$communicationWay->icon_class}} fa-xl"></i>
                         </div>
                     </a>
