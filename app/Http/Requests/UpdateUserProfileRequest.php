@@ -30,6 +30,7 @@ class UpdateUserProfileRequest extends FormRequest
             'contact_me' => 'nullable|string|max:65000',
             'about_me_title' => 'nullable|string|max:65000',
             'image' => 'nullable|image|max:10000',
+            'cv' => 'nullable|file|max:1000',
         ];
     }
 }

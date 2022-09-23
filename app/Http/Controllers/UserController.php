@@ -53,6 +53,13 @@ class UserController extends Controller
             auth()->user()->image = $request->file('image')->store('profileImages');
         }
 
+        if (isset($data['cv'])) {
+            if(File::exists(auth()->user()->cv)){
+                File::delete(auth()->user()->cv);
+            }
+            auth()->user()->cv = $request->file('cv')->store('cv');
+        }
+
         auth()->user()->save();
 
         session()->flash('message', 'User Information has been updated successfully');

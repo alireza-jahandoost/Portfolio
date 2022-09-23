@@ -21,6 +21,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->string('image')->nullable();
+            $table->string('cv')->nullable();
             $table->string('password');
             $table->text('about_me')->nullable();
             $table->text('contact_me')->nullable();
