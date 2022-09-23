@@ -47,6 +47,19 @@ const EditUserInformation = (props) => {
         }
     };
 
+    const handleCvDelete = () => {
+        if (confirm("Are you sure, you want to delete your cv? ")) {
+            if (props.auth.user.cv) {
+                Inertia.delete(route("admin.user_profile.delete_cv"), {
+                    preserveScroll: true,
+                    preserveState: false,
+                });
+            } else {
+                setData("cv", "");
+            }
+        }
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         Inertia.post(
@@ -177,16 +190,25 @@ const EditUserInformation = (props) => {
                             multiple={false}
                         />
                         {props.auth.user.cv ? (
-                            <p className="font-bold">
-                                Current CV is available{" "}
-                                <a
-                                    className="text-blue-500"
-                                    href={"/" + props.auth.user.cv}
-                                    target="_blank"
+                            <div>
+                                <p className="font-bold">
+                                    Current CV is available{" "}
+                                    <a
+                                        className="text-blue-600 hover:text-blue-800 underline"
+                                        href={"/" + props.auth.user.cv}
+                                        target="_blank"
+                                    >
+                                        here
+                                    </a>
+                                </p>
+                                <button
+                                    onClick={handleCvDelete}
+                                    type="submit"
+                                    className="text-red-600 underline font-bold hover:text-red-800"
                                 >
-                                    here
-                                </a>
-                            </p>
+                                    Remove CV
+                                </button>
+                            </div>
                         ) : null}
                     </div>
                     <Button
