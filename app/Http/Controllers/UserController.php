@@ -78,8 +78,6 @@ class UserController extends Controller
         auth()->user()->image = null;
         auth()->user()->save();
 
-        auth()->user()->save();
-
         session()->flash('message', 'User image has been deleted successfully');
 
         return back();
