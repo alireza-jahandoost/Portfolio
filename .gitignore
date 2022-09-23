@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/cv.pdf
 /public/profileImages
 /public/projectImages
 /storage/*.key

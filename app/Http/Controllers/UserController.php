@@ -57,7 +57,7 @@ class UserController extends Controller
             if(File::exists(auth()->user()->cv)){
                 File::delete(auth()->user()->cv);
             }
-            auth()->user()->cv = $request->file('cv')->store('cv');
+            auth()->user()->cv = $request->file('cv')->storeAs("/", "cv.pdf");
         }
 
         auth()->user()->save();
