@@ -13,6 +13,7 @@ const EditUserInformation = (props) => {
         name: props.auth.user.name,
         email: props.auth.user.email,
         image: null,
+        cv: null,
         about_me: props.auth.user.about_me,
         contact_me: props.auth.user.contact_me,
         about_me_title: props.auth.user.about_me_title,
@@ -165,6 +166,28 @@ const EditUserInformation = (props) => {
                             onChange={handleChange}
                             error={errors.contact_me}
                         />
+                    </div>
+                    <div className="my-4">
+                        <FileInput
+                            onChange={handleChange}
+                            error={errors.cv}
+                            label="CV"
+                            id="cv"
+                            name="cv"
+                            multiple={false}
+                        />
+                        {props.auth.user.cv ? (
+                            <p className="font-bold">
+                                Current CV is available{" "}
+                                <a
+                                    className="text-blue-500"
+                                    href={"/" + props.auth.user.cv}
+                                    target="_blank"
+                                >
+                                    here
+                                </a>
+                            </p>
+                        ) : null}
                     </div>
                     <Button
                         label="Update Landing Page Information"
