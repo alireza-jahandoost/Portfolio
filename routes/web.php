@@ -53,6 +53,8 @@ Route::middleware(['auth', EnsureUserIsAdmin::class])
                 ->name('user_profile.update');
             Route::delete('user_profile_image', [UserController::class, 'delete_image'])
                 ->name('user_profile.delete_image');
+            Route::delete('user_profile_cv', [UserController::class, 'delete_cv'])
+                ->name('user_profile.delete_cv');
 
             Route::get('communication_ways/edit', [CommunicationWayController::class, 'edit'])
                 ->name('communication_ways.edit');

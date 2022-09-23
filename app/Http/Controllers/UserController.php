@@ -84,4 +84,20 @@ class UserController extends Controller
 
         return back();
     }
+
+    public function delete_cv()
+    {
+        $cvPath = auth()->user()->cv;
+
+        if (Storage::exists($cvPath)) {
+            Storage::delete($cvPath);
+        }
+
+        auth()->user()->cv = null;
+        auth()->user()->save();
+
+        session()->flash('message', 'User CV has been deleted successfully');
+
+        return back();
+    }
 }
