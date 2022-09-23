@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserProfileRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -46,6 +47,9 @@ class UserController extends Controller
         }
 
         if (isset($data['image'])) {
+            if(File::exists(auth()->user()->image)){
+                File::delete(auth()->user()->image);
+            }
             auth()->user()->image = $request->file('image')->store('profileImages');
         }
 
