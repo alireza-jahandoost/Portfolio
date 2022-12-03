@@ -48,7 +48,7 @@
                     class="hover:text-gray-800">
                     <a href="{{"/" . $user->cv}}" target="_blank">
                         <div class="flex flex-col">
-                            <i class="fa-solid fa-memo text-center text-2xl"></i>
+                            <i class="fa-solid fa-note-sticky text-center text-2xl"></i>
                             <span class="text-xs pt-1 text-center">CV</span>
                         </div>
                     </a>
