@@ -36,7 +36,7 @@
 <body class="antialiased min-h-screen flex flex-col mb-16 md:mt-20 md:mb-0">
 
 <header>
-    @include('partials.general.navbar')
+    @include('partials.general.navbar', ['user' => $user])
 </header>
 
 <main class="grow">

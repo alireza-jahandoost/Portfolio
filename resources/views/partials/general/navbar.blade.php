@@ -9,10 +9,10 @@
                 class="hover:text-gray-800{{request()->routeIs('main.projects.*') ? " text-gray-800 font-bold" : ""}}">
                 <a href="{{route('main.projects.index')}}">Projects</a>
             </div>
-            @if(auth()->user()->cv)
+            @if($user->cv)
                 <div
                     class="hover:text-gray-800">
-                    <a href="{{"/" . auth()->user()->cv}}" target="_blank">CV</a>
+                    <a href="{{"/" . $user->cv}}" target="_blank">CV</a>
                 </div>
             @endif
             <div class="ml-auto hover:text-gray-800 text-lg">
@@ -43,12 +43,12 @@
                     </div>
                 </a>
             </div>
-            @if(auth()->user()->cv)
+            @if($user->cv)
                 <div
                     class="hover:text-gray-800">
-                    <a href="{{"/" . auth()->user()->cv}}" target="_blank">
+                    <a href="{{"/" . $user->cv}}" target="_blank">
                         <div class="flex flex-col">
-                            <i class="fa-solid fa-envelope text-center text-2xl"></i>
+                            <i class="fa-solid fa-memo text-center text-2xl"></i>
                             <span class="text-xs pt-1 text-center">CV</span>
                         </div>
                     </a>

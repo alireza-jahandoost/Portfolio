@@ -39,5 +39,12 @@ class AppServiceProvider extends ServiceProvider
         if(Schema::hasTable('users')){
             View::share('user', User::first());
         }
+
+        view()->composer(
+            'components.layouts.main',
+            function ($view) {
+                $view->with('user', User::first());
+            }
+        );
     }
 }
